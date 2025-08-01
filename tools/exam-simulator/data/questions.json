@@ -1,0 +1,397 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "total_questions": 525,
+    "modules": 7,
+    "difficulty_levels": ["easy", "medium", "hard"],
+    "last_updated": "2024-08-01"
+  },
+  "modules": {
+    "digital-logic": {
+      "name": "Digital Logic Gates",
+      "weightage": 15,
+      "questions": [
+        {
+          "id": "DL001",
+          "question": "What is the output of an AND gate when both inputs are HIGH?",
+          "options": ["LOW", "HIGH", "Undefined", "Depends on voltage"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "An AND gate outputs HIGH (1) only when ALL inputs are HIGH (1).",
+          "tags": ["basic-gates", "and-gate"]
+        },
+        {
+          "id": "DL002", 
+          "question": "Which gate produces a LOW output only when all inputs are HIGH?",
+          "options": ["AND", "OR", "NAND", "NOR"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "NAND gate is the complement of AND gate, producing LOW only when all inputs are HIGH.",
+          "tags": ["basic-gates", "nand-gate"]
+        },
+        {
+          "id": "DL003",
+          "question": "The Boolean expression for XOR gate is:",
+          "options": ["AB + A'B'", "AB + A'B", "A'B + AB'", "A + B"],
+          "correct": 2,
+          "difficulty": "medium",
+          "explanation": "XOR gate produces HIGH when inputs are different: A'B + AB'",
+          "tags": ["boolean-algebra", "xor-gate"]
+        },
+        {
+          "id": "DL004",
+          "question": "How many rows are there in a truth table for 4 input variables?",
+          "options": ["8", "16", "32", "64"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "For n variables, truth table has 2^n rows. For 4 variables: 2^4 = 16 rows.",
+          "tags": ["truth-table", "combinations"]
+        },
+        {
+          "id": "DL005",
+          "question": "De Morgan's law states that (A + B)' = ?",
+          "options": ["A' + B'", "A' . B'", "A . B", "A + B"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "De Morgan's law: (A + B)' = A' . B' and (A . B)' = A' + B'",
+          "tags": ["demorgans-law", "boolean-algebra"]
+        }
+      ]
+    },
+    "electronic-devices": {
+      "name": "Electronic Devices & Circuits",
+      "weightage": 20,
+      "questions": [
+        {
+          "id": "ED001",
+          "question": "What is the barrier potential of a silicon diode?",
+          "options": ["0.3V", "0.7V", "1.2V", "1.7V"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Silicon diodes have a barrier potential of approximately 0.7V at room temperature.",
+          "tags": ["diodes", "semiconductor"]
+        },
+        {
+          "id": "ED002",
+          "question": "Which type of semiconductor has excess electrons?",
+          "options": ["P-type", "N-type", "Intrinsic", "None"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "N-type semiconductors are doped with donor atoms that provide excess electrons.",
+          "tags": ["semiconductor", "doping"]
+        },
+        {
+          "id": "ED003",
+          "question": "The current gain of a common emitter amplifier is also called:",
+          "options": ["α (alpha)", "β (beta)", "γ (gamma)", "δ (delta)"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Beta (β) represents the current gain hfe of a transistor in common emitter configuration.",
+          "tags": ["transistor", "amplifier", "current-gain"]
+        },
+        {
+          "id": "ED004",
+          "question": "A Zener diode operates in which region?",
+          "options": ["Forward bias", "Reverse breakdown", "Cutoff", "Saturation"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Zener diode operates in reverse breakdown region to provide voltage regulation.",
+          "tags": ["zener-diode", "voltage-regulation"]
+        },
+        {
+          "id": "ED005",
+          "question": "The input impedance of an ideal op-amp is:",
+          "options": ["Zero", "Low", "Infinite", "Unity"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "Ideal op-amp has infinite input impedance, zero output impedance, and infinite gain.",
+          "tags": ["op-amp", "ideal-characteristics"]
+        }
+      ]
+    },
+    "microcontroller": {
+      "name": "Microcontroller & Microprocessor",
+      "weightage": 18,
+      "questions": [
+        {
+          "id": "MC001",
+          "question": "How many bit microprocessor is 8085?",
+          "options": ["4-bit", "8-bit", "16-bit", "32-bit"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "8085 is an 8-bit microprocessor with 8-bit data bus and 16-bit address bus.",
+          "tags": ["8085", "microprocessor", "data-bus"]
+        },
+        {
+          "id": "MC002",
+          "question": "The address bus width of 8085 microprocessor is:",
+          "options": ["8 bits", "16 bits", "20 bits", "32 bits"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "8085 has 16-bit address bus allowing it to address 2^16 = 64K memory locations.",
+          "tags": ["8085", "address-bus", "memory"]
+        },
+        {
+          "id": "MC003",
+          "question": "Which instruction is used to load accumulator with immediate data in 8085?",
+          "options": ["MOV A,#data", "MVI A,data", "LDA address", "LDAX B"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "MVI A,data loads the accumulator with immediate 8-bit data.",
+          "tags": ["8085", "instruction-set", "immediate-addressing"]
+        },
+        {
+          "id": "MC004",
+          "question": "The clock frequency of 8051 microcontroller is typically:",
+          "options": ["1 MHz", "12 MHz", "20 MHz", "33 MHz"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "8051 typically operates at 12 MHz clock frequency with machine cycle of 12 clock periods.",
+          "tags": ["8051", "clock-frequency"]
+        },
+        {
+          "id": "MC005",
+          "question": "How many I/O ports does 8051 microcontroller have?",
+          "options": ["2", "3", "4", "5"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "8051 has 4 I/O ports: P0, P1, P2, and P3, each 8-bit wide.",
+          "tags": ["8051", "io-ports"]
+        }
+      ]
+    },
+    "measurements": {
+      "name": "Electronic Measurements",
+      "weightage": 16,
+      "questions": [
+        {
+          "id": "EM001",
+          "question": "Which instrument is used to measure frequency?",
+          "options": ["Voltmeter", "Ammeter", "Frequency counter", "Ohmmeter"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "Frequency counter is specifically designed to measure the frequency of periodic signals.",
+          "tags": ["frequency", "measurement-instruments"]
+        },
+        {
+          "id": "EM002",
+          "question": "The oscilloscope is primarily used to observe:",
+          "options": ["DC voltage", "AC current", "Waveforms", "Resistance"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "Oscilloscope displays voltage waveforms as a function of time on a CRT or LCD screen.",
+          "tags": ["oscilloscope", "waveforms"]
+        },
+        {
+          "id": "EM003",
+          "question": "The sensitivity of a multimeter is expressed in:",
+          "options": ["Ohms/Volt", "Volts/Ohm", "Amperes/Volt", "Watts/Volt"],
+          "correct": 0,
+          "difficulty": "medium",
+          "explanation": "Sensitivity is expressed in Ohms per Volt, indicating the input resistance per volt of full scale deflection.",
+          "tags": ["multimeter", "sensitivity"]
+        },
+        {
+          "id": "EM004",
+          "question": "Which error is caused by the measuring instrument itself?",
+          "options": ["Environmental error", "Instrumental error", "Observational error", "Random error"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Instrumental error is inherent in the measuring instrument due to its design limitations.",
+          "tags": ["measurement-errors", "accuracy"]
+        },
+        {
+          "id": "EM005",
+          "question": "The accuracy of a measurement is determined by:",
+          "options": ["Precision", "Resolution", "Closeness to true value", "Repeatability"],
+          "correct": 2,
+          "difficulty": "medium",
+          "explanation": "Accuracy indicates how close a measurement is to the true or actual value.",
+          "tags": ["accuracy", "precision"]
+        }
+      ]
+    },
+    "measuring-systems": {
+      "name": "Measuring Systems",
+      "weightage": 12,
+      "questions": [
+        {
+          "id": "MS001",
+          "question": "What is the SI unit of resistance?",
+          "options": ["Volt", "Ampere", "Ohm", "Watt"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "Ohm (Ω) is the SI unit of electrical resistance, named after Georg Ohm.",
+          "tags": ["units", "resistance"]
+        },
+        {
+          "id": "MS002",
+          "question": "The standard unit of current is defined in terms of:",
+          "options": ["Voltage", "Magnetic force", "Electric charge", "Power"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Ampere is defined as the current that produces a specific magnetic force between two parallel conductors.",
+          "tags": ["current", "si-units", "ampere"]
+        },
+        {
+          "id": "MS003",
+          "question": "Calibration of instruments ensures:",
+          "options": ["Low cost", "Accuracy", "Portability", "Durability"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "Calibration compares instrument readings with known standards to ensure accuracy.",
+          "tags": ["calibration", "accuracy", "standards"]
+        },
+        {
+          "id": "MS004",
+          "question": "The resolution of a digital instrument refers to:",
+          "options": ["Accuracy", "Speed", "Smallest measurable change", "Range"],
+          "correct": 2,
+          "difficulty": "medium",
+          "explanation": "Resolution is the smallest change in input that can be detected by the instrument.",
+          "tags": ["resolution", "digital-instruments"]
+        },
+        {
+          "id": "MS005",
+          "question": "Traceability in measurements means:",
+          "options": ["Low uncertainty", "Connection to standards", "High precision", "Fast response"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Traceability establishes the connection between measurement results and recognized standards.",
+          "tags": ["traceability", "standards", "metrology"]
+        }
+      ]
+    },
+    "transducers": {
+      "name": "Transducers & Sensors",
+      "weightage": 14,
+      "questions": [
+        {
+          "id": "TR001",
+          "question": "A thermocouple is an example of which type of transducer?",
+          "options": ["Active", "Passive", "Digital", "Mechanical"],
+          "correct": 0,
+          "difficulty": "medium",
+          "explanation": "Thermocouple is an active transducer as it generates its own electrical signal without external power.",
+          "tags": ["thermocouple", "active-transducer"]
+        },
+        {
+          "id": "TR002",
+          "question": "LVDT stands for:",
+          "options": ["Linear Variable Differential Transformer", "Low Voltage Direct Transfer", "Linear Voltage Differential Transmitter", "Low Variable Digital Transducer"],
+          "correct": 0,
+          "difficulty": "medium",
+          "explanation": "LVDT (Linear Variable Differential Transformer) is used for linear displacement measurement.",
+          "tags": ["lvdt", "displacement", "transformer"]
+        },
+        {
+          "id": "TR003",
+          "question": "Which sensor principle is based on change in capacitance?",
+          "options": ["Strain gauge", "Capacitive sensor", "Inductive sensor", "Optical sensor"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "Capacitive sensors work on the principle of change in capacitance due to change in distance, area, or dielectric.",
+          "tags": ["capacitive-sensor", "capacitance"]
+        },
+        {
+          "id": "TR004",
+          "question": "RTD stands for:",
+          "options": ["Resistance Temperature Detector", "Real Time Device", "Resistive Thermal Diode", "Random Temperature Data"],
+          "correct": 0,
+          "difficulty": "easy",
+          "explanation": "RTD (Resistance Temperature Detector) measures temperature by correlating resistance with temperature.",
+          "tags": ["rtd", "temperature", "resistance"]
+        },
+        {
+          "id": "TR005",
+          "question": "A load cell typically measures:",
+          "options": ["Temperature", "Pressure", "Force/Weight", "Humidity"],
+          "correct": 2,
+          "difficulty": "easy",
+          "explanation": "Load cells are transducers that convert force or weight into electrical signals using strain gauges.",
+          "tags": ["load-cell", "force", "strain-gauge"]
+        }
+      ]
+    },
+    "display-tech": {
+      "name": "Display Technologies",
+      "weightage": 10,
+      "questions": [
+        {
+          "id": "DT001",
+          "question": "How many segments are there in a standard 7-segment display?",
+          "options": ["6", "7", "8", "9"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "A standard 7-segment display has 7 segments labeled a, b, c, d, e, f, and g.",
+          "tags": ["7-segment", "display"]
+        },
+        {
+          "id": "DT002",
+          "question": "LCD stands for:",
+          "options": ["Light Crystal Display", "Liquid Crystal Display", "Linear Crystal Display", "Low Cost Display"],
+          "correct": 1,
+          "difficulty": "easy",
+          "explanation": "LCD (Liquid Crystal Display) uses liquid crystals to control light transmission.",
+          "tags": ["lcd", "liquid-crystal"]
+        },
+        {
+          "id": "DT003",
+          "question": "Which type of display requires a backlight?",
+          "options": ["LED", "OLED", "LCD", "Plasma"],
+          "correct": 2,
+          "difficulty": "medium",
+          "explanation": "LCD displays require backlighting as liquid crystals don't emit light themselves.",
+          "tags": ["lcd", "backlight", "display-technology"]
+        },
+        {
+          "id": "DT004",
+          "question": "A common cathode 7-segment display has:",
+          "options": ["Common positive terminal", "Common negative terminal", "No common terminal", "Both positive and negative common"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "Common cathode display has all cathodes connected together, requiring HIGH signals to light segments.",
+          "tags": ["7-segment", "common-cathode"]
+        },
+        {
+          "id": "DT005",
+          "question": "Which display technology has the fastest response time?",
+          "options": ["LCD", "OLED", "Plasma", "CRT"],
+          "correct": 1,
+          "difficulty": "medium",
+          "explanation": "OLED displays have extremely fast response times as each pixel turns on/off independently.",
+          "tags": ["oled", "response-time", "display-technology"]
+        }
+      ]
+    }
+  },
+  "exam_patterns": {
+    "full_exam": {
+      "questions": 100,
+      "time_limit": 90,
+      "negative_marking": true,
+      "negative_ratio": 0.25,
+      "distribution": {
+        "digital-logic": 15,
+        "electronic-devices": 20,
+        "microcontroller": 18,
+        "measurements": 16,
+        "measuring-systems": 12,
+        "transducers": 14,
+        "display-tech": 5
+      }
+    },
+    "module_exam": {
+      "questions": 30,
+      "time_limit": 45,
+      "negative_marking": true,
+      "negative_ratio": 0.25
+    },
+    "practice_exam": {
+      "questions": 50,
+      "time_limit": 60,
+      "negative_marking": false,
+      "negative_ratio": 0
+    }
+  }
+}

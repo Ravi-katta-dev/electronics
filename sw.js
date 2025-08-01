@@ -4,35 +4,39 @@ const DYNAMIC_CACHE = 'rrb-electronics-dynamic-v1.0.0';
 
 // Files to cache immediately
 const STATIC_FILES = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/assets/css/main.css',
-  '/assets/css/components.css',
-  '/assets/css/responsive.css',
-  '/assets/js/app.js',
-  '/assets/js/circuit-engine.js',
-  '/assets/js/simulation.js',
-  '/assets/js/exam-engine.js',
-  '/modules/digital-logic/index.html',
-  '/modules/electronic-devices/index.html',
-  '/modules/microcontroller/index.html',
-  '/modules/measurements/index.html',
-  '/modules/measuring-systems/index.html',
-  '/modules/transducers/index.html',
-  '/modules/display-tech/index.html',
-  '/tools/circuit-builder/index.html',
-  '/tools/virtual-lab/index.html',
-  '/tools/exam-simulator/index.html'
+  './',
+  './index.html',
+  './manifest.json',
+  './assets/css/main.css',
+  './assets/css/components.css',
+  './assets/css/responsive.css',
+  './assets/js/app.js',
+  './assets/js/circuit-engine.js',
+  './assets/js/simulation.js',
+  './assets/js/exam-engine.js',
+  './js/utils/github-pages-router.js',
+  './modules/digital-logic/index.html',
+  './modules/electronic-devices/index.html',
+  './modules/microcontroller/index.html',
+  './modules/measurements/index.html',
+  './modules/measuring-systems/index.html',
+  './modules/transducers/index.html',
+  './modules/display-tech/index.html',
+  './tools/circuit-builder/index.html',
+  './tools/virtual-lab/index.html',
+  './tools/exam-simulator/index.html',
+  './tools/exam-simulator/css/exam-styles.css',
+  './tools/exam-simulator/js/exam-engine.js',
+  './tools/exam-simulator/data/questions.json'
 ];
 
 // Files that should be cached dynamically
 const DYNAMIC_FILES = [
-  '/data/questions/',
-  '/data/circuits/',
-  '/data/formulas/',
-  '/data/components/',
-  '/assets/images/'
+  './data/questions/',
+  './data/circuits/',
+  './data/formulas/',
+  './data/components/',
+  './assets/images/'
 ];
 
 // Install event - cache static files
@@ -134,7 +138,7 @@ self.addEventListener('fetch', (event) => {
             
             // Return offline fallback for navigation requests
             if (request.destination === 'document') {
-              return caches.match('/index.html');
+              return caches.match('./index.html');
             }
             
             // Return generic offline message for other requests
