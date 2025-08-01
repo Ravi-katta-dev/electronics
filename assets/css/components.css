@@ -10,11 +10,24 @@
   border: 1px solid #e9ecef;
   position: relative;
   overflow: hidden;
+  /* Performance optimization */
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .module-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
+}
+
+/* Enhanced hover effects for desktop */
+@media (min-width: 992px) {
+  .module-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .module-card::before {
@@ -170,6 +183,14 @@
   margin-top: var(--spacing-xl);
 }
 
+/* Enhanced progress grid for larger screens */
+@media (min-width: 1200px) {
+  .progress-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xxl);
+  }
+}
+
 .progress-card {
   background: var(--bg-primary);
   border-radius: var(--border-radius-xl);
@@ -292,11 +313,24 @@
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
   border: 1px solid #e9ecef;
+  /* Performance optimization */
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .tool-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Enhanced tool card hover for desktop */
+@media (min-width: 992px) {
+  .tool-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .tool-icon {
@@ -582,6 +616,19 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-lg);
   margin: var(--spacing-lg) 0;
+}
+
+/* Performance optimizations */
+.module-card,
+.tool-card,
+.progress-card,
+.quick-item {
+  /* GPU acceleration for smooth animations */
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Animation Classes */
