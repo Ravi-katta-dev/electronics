@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()">
+    <title>Module 3: Microcontroller Programming - RRB Electronics</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="microcontroller.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="../../index.html" class="back-link">← Back to Home</a>
+                    <h1>Microcontroller Programming</h1>
+                    <p class="subtitle">Module 3 - RRB Tech Grade 1</p>
+                </div>
+                <nav class="module-nav">
+                    <ul class="nav-links">
+                        <li><a href="#basics" class="nav-link active">Basics</a></li>
+                        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                        <li><a href="#programming" class="nav-link">Programming</a></li>
+                        <li><a href="#interfaces" class="nav-link">Interfaces</a></li>
+                        <li><a href="#applications" class="nav-link">Applications</a></li>
+                        <li><a href="#practice" class="nav-link">Practice</a></li>
+                    </ul>
+                </nav>
+                <div class="module-progress-header">
+                    <span class="progress-label">Progress</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="module-progress" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Module Content -->
+        <main class="module-content">
+            <!-- Basics Section -->
+            <section id="basics" class="module-section">
+                <div class="section-header">
+                    <h2>🔧 Microcontroller Fundamentals</h2>
+                    <p>Understanding microcontrollers and their role in railway signal systems</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>What is a Microcontroller?</h3>
+                        <p>A microcontroller is a compact integrated circuit designed to control specific operations in embedded systems. It combines a processor, memory, and input/output peripherals on a single chip.</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Microcontroller vs Microprocessor</h4>
+                            <div class="comparison-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th>Microcontroller</th>
+                                            <th>Microprocessor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Memory</td>
+                                            <td>Built-in RAM/ROM</td>
+                                            <td>External RAM/ROM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>I/O Ports</td>
+                                            <td>Built-in</td>
+                                            <td>External</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cost</td>
+                                            <td>Low</td>
+                                            <td>High</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Power</td>
+                                            <td>Low</td>
+                                            <td>High</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Application</td>
+                                            <td>Control Systems</td>
+                                            <td>Computing Systems</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Railway Signal Applications</h3>
+                        <p>Microcontrollers are extensively used in railway signaling systems for automation, safety, and control.</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Signal System Applications</h4>
+                            <div class="applications-grid">
+                                <div class="app-item">
+                                    <div class="app-icon">🚦</div>
+                                    <h5>Signal Control</h5>
+                                    <p>Automated signal light control based on track occupancy</p>
+                                </div>
+                                <div class="app-item">
+                                    <div class="app-icon">🔒</div>
+                                    <h5>Interlocking</h5>
+                                    <p>Safety interlocking systems to prevent signal conflicts</p>
+                                </div>
+                                <div class="app-item">
+                                    <div class="app-icon">📡</div>
+                                    <h5>Communication</h5>
+                                    <p>Data communication between signal boxes</p>
+                                </div>
+                                <div class="app-item">
+                                    <div class="app-icon">⚠️</div>
+                                    <h5>Fault Detection</h5>
+                                    <p>Monitoring and fault detection systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Section -->
+            <section id="architecture" class="module-section">
+                <div class="section-header">
+                    <h2>🏗️ Microcontroller Architecture</h2>
+                    <p>Learn the internal structure and components of microcontrollers</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card full-width">
+                        <h3>8051 Microcontroller Architecture</h3>
+                        <p>The 8051 is widely used in railway applications. Let's explore its architecture:</p>
+                        
+                        <div class="interactive-demo">
+                            <div class="architecture-diagram">
+                                <div class="cpu-block">
+                                    <h4>CPU Core</h4>
+                                    <div class="cpu-components">
+                                        <div class="component">ALU</div>
+                                        <div class="component">Registers</div>
+                                        <div class="component">Control Unit</div>
+                                    </div>
+                                </div>
+                                <div class="memory-block">
+                                    <h4>Memory</h4>
+                                    <div class="memory-types">
+                                        <div class="memory-item">
+                                            <strong>ROM (4KB)</strong>
+                                            <p>Program Memory</p>
+                                        </div>
+                                        <div class="memory-item">
+                                            <strong>RAM (128B)</strong>
+                                            <p>Data Memory</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="io-block">
+                                    <h4>I/O Ports</h4>
+                                    <div class="ports-grid">
+                                        <div class="port">P0 (8-bit)</div>
+                                        <div class="port">P1 (8-bit)</div>
+                                        <div class="port">P2 (8-bit)</div>
+                                        <div class="port">P3 (8-bit)</div>
+                                    </div>
+                                </div>
+                                <div class="peripherals-block">
+                                    <h4>Peripherals</h4>
+                                    <div class="peripheral-list">
+                                        <div class="peripheral">Timers (T0, T1)</div>
+                                        <div class="peripheral">Serial Port</div>
+                                        <div class="peripheral">Interrupts</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Programming Section -->
+            <section id="programming" class="module-section">
+                <div class="section-header">
+                    <h2>💻 Programming Concepts</h2>
+                    <p>Learn assembly and C programming for microcontrollers</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>Assembly Language Programming</h3>
+                        <p>Basic assembly instructions for 8051 microcontroller:</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Common Instructions</h4>
+                            <div class="instruction-list">
+                                <div class="instruction">
+                                    <code>MOV A, #55H</code>
+                                    <span>Move immediate data to Accumulator</span>
+                                </div>
+                                <div class="instruction">
+                                    <code>ADD A, R0</code>
+                                    <span>Add register R0 to Accumulator</span>
+                                </div>
+                                <div class="instruction">
+                                    <code>SETB P1.0</code>
+                                    <span>Set bit 0 of Port 1</span>
+                                </div>
+                                <div class="instruction">
+                                    <code>JZ LABEL</code>
+                                    <span>Jump if Accumulator is zero</span>
+                                </div>
+                                <div class="instruction">
+                                    <code>CALL SUBROUTINE</code>
+                                    <span>Call a subroutine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>LED Blinking Program</h3>
+                        <p>A practical example of microcontroller programming:</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Assembly Code</h4>
+                            <div class="code-block">
+                                <pre><code>ORG 0000H          ; Start address
+MAIN:
+    SETB P1.0          ; Turn ON LED
+    CALL DELAY         ; Call delay subroutine
+    CLR P1.0           ; Turn OFF LED
+    CALL DELAY         ; Call delay subroutine
+    SJMP MAIN          ; Repeat
+
+DELAY:
+    MOV R0, #255       ; Load counter
+LOOP:
+    MOV R1, #255       ; Inner loop counter
+INNER:
+    DJNZ R1, INNER     ; Decrement and jump
+    DJNZ R0, LOOP      ; Outer loop
+    RET                ; Return from subroutine
+END</code></pre>
+                            </div>
+                            <button class="simulate-btn" onclick="simulateLED()">Simulate LED</button>
+                            <div class="led-simulation" id="led-sim">
+                                <div class="led-display" id="led-display">💡</div>
+                                <p>Click simulate to see LED blinking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interfaces Section -->
+            <section id="interfaces" class="module-section">
+                <div class="section-header">
+                    <h2>🔌 Interface Circuits</h2>
+                    <p>Learn how to interface various devices with microcontrollers</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>LED Interface</h3>
+                        <p>Simple output interface for indication purposes:</p>
+                        
+                        <div class="interactive-demo">
+                            <div class="circuit-diagram">
+                                <div class="component microcontroller">
+                                    <div class="pin">P1.0</div>
+                                </div>
+                                <div class="component resistor">220Ω</div>
+                                <div class="component led">LED</div>
+                                <div class="component ground">GND</div>
+                            </div>
+                            <div class="circuit-explanation">
+                                <p><strong>Circuit Analysis:</strong></p>
+                                <ul>
+                                    <li>Current limiting resistor (220Ω) protects LED</li>
+                                    <li>When P1.0 = 1 (5V), LED glows</li>
+                                    <li>When P1.0 = 0 (0V), LED is off</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Switch Interface</h3>
+                        <p>Input interface for reading digital signals:</p>
+                        
+                        <div class="interactive-demo">
+                            <div class="circuit-diagram">
+                                <div class="component vcc">+5V</div>
+                                <div class="component resistor">10kΩ</div>
+                                <div class="component microcontroller">
+                                    <div class="pin">P2.0</div>
+                                </div>
+                                <div class="component switch">SW</div>
+                                <div class="component ground">GND</div>
+                            </div>
+                            <div class="circuit-explanation">
+                                <p><strong>Pull-up Configuration:</strong></p>
+                                <ul>
+                                    <li>Switch open: P2.0 reads 1 (5V)</li>
+                                    <li>Switch closed: P2.0 reads 0 (0V)</li>
+                                    <li>Pull-up resistor ensures defined logic levels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section id="applications" class="module-section">
+                <div class="section-header">
+                    <h2>🚄 Railway Signal Applications</h2>
+                    <p>Real-world applications in railway signaling systems</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>Automatic Signal Control</h3>
+                        <p>Microcontroller-based automatic signal control system:</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>System Components</h4>
+                            <div class="system-diagram">
+                                <div class="track-section">
+                                    <div class="track">Track Section</div>
+                                    <div class="sensor">Track Circuit</div>
+                                </div>
+                                <div class="controller">
+                                    <h5>Microcontroller</h5>
+                                    <div class="inputs">
+                                        <div class="input">Track Occupied</div>
+                                        <div class="input">Track Clear</div>
+                                    </div>
+                                    <div class="outputs">
+                                        <div class="output">Red Signal</div>
+                                        <div class="output">Green Signal</div>
+                                    </div>
+                                </div>
+                                <div class="signal-lights">
+                                    <div class="signal red">🔴</div>
+                                    <div class="signal green">🟢</div>
+                                </div>
+                            </div>
+                            
+                            <div class="logic-table">
+                                <h5>Control Logic</h5>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Track Status</th>
+                                            <th>Red Signal</th>
+                                            <th>Green Signal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Occupied</td>
+                                            <td>ON</td>
+                                            <td>OFF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Clear</td>
+                                            <td>OFF</td>
+                                            <td>ON</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Level Crossing Control</h3>
+                        <p>Automated level crossing gate control system:</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Control Sequence</h4>
+                            <div class="sequence-steps">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Train Detection</h5>
+                                        <p>Sensor detects approaching train</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Warning Signal</h5>
+                                        <p>Audio/visual warning activated</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Gate Closing</h5>
+                                        <p>Barriers lowered automatically</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Train Passage</h5>
+                                        <p>Train passes safely</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h5>Gate Opening</h5>
+                                        <p>Barriers raised after train passes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section id="practice" class="module-section">
+                <div class="section-header">
+                    <h2>🎯 Practice & Assessment</h2>
+                    <p>Test your understanding with interactive exercises</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>Programming Exercise</h3>
+                        <p>Write a program to control railway signals based on track occupancy:</p>
+                        
+                        <div class="interactive-demo">
+                            <div class="exercise-problem">
+                                <h4>Problem Statement</h4>
+                                <p>Design a program that:</p>
+                                <ul>
+                                    <li>Reads track occupancy from P2.0</li>
+                                    <li>Controls red signal at P1.0</li>
+                                    <li>Controls green signal at P1.1</li>
+                                    <li>Implements safety interlocking</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="code-editor">
+                                <h5>Your Solution:</h5>
+                                <textarea id="code-input" placeholder="Write your assembly code here...">ORG 0000H
+MAIN:
+    ; Your code here
+    
+    SJMP MAIN
+END</textarea>
+                                <button class="check-btn" onclick="checkCode()">Check Solution</button>
+                                <div class="feedback" id="code-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Quick Quiz</h3>
+                        <p>Test your knowledge of microcontroller concepts:</p>
+                        
+                        <div class="interactive-demo">
+                            <div class="quiz-container" id="quiz-container">
+                                <div class="question" id="current-question">
+                                    Loading quiz...
+                                </div>
+                                <div class="options" id="quiz-options">
+                                </div>
+                                <button class="quiz-btn" id="quiz-btn" onclick="nextQuestion()">Start Quiz</button>
+                                <div class="quiz-score" id="quiz-score"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module Summary -->
+            <section class="module-summary">
+                <h2>📚 Module Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Key Concepts</h3>
+                        <ul>
+                            <li>Microcontroller architecture and components</li>
+                            <li>8051 microcontroller features</li>
+                            <li>Assembly language programming</li>
+                            <li>Interface circuit design</li>
+                            <li>Railway signal applications</li>
+                        </ul>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Practical Skills</h3>
+                        <ul>
+                            <li>Writing assembly programs</li>
+                            <li>LED and switch interfacing</li>
+                            <li>Signal control logic</li>
+                            <li>Safety system design</li>
+                            <li>Troubleshooting techniques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="next-module">
+                    <p>Ready for the next challenge?</p>
+                    <a href="../display-tech/" class="next-btn">Next: Display Technology →</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Module Navigation Footer -->
+        <footer class="module-footer">
+            <div class="footer-content">
+                <div class="module-info">
+                    <h3>Microcontroller Programming</h3>
+                    <p>Module 3 of 7 - RRB Tech Grade 1 Signal</p>
+                </div>
+                <div class="module-actions">
+                    <button class="bookmark-btn" onclick="toggleBookmark()">📖 Bookmark</button>
+                    <button class="notes-btn" onclick="openNotes()">📝 Notes</button>
+                    <button class="share-btn" onclick="shareModule()">📤 Share</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js"></script>
+    <script src="microcontroller.js"></script>
+</body>
+</html>
