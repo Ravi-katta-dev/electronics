@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()">
+    <title>Module 7: Display Technologies - RRB Electronics</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="display-tech.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="../../index.html" class="back-link">← Back to Home</a>
+                    <h1>Display Technologies</h1>
+                    <p class="subtitle">Module 7 - RRB Tech Grade 1</p>
+                </div>
+                <nav class="module-nav">
+                    <ul class="nav-links">
+                        <li><a href="#basics" class="nav-link active">Basics</a></li>
+                        <li><a href="#led-displays" class="nav-link">LED Displays</a></li>
+                        <li><a href="#lcd-technology" class="nav-link">LCD Technology</a></li>
+                        <li><a href="#driver-circuits" class="nav-link">Driver Circuits</a></li>
+                        <li><a href="#interface-protocols" class="nav-link">Interfaces</a></li>
+                        <li><a href="#simulators" class="nav-link">Simulators</a></li>
+                        <li><a href="#practice" class="nav-link">Practice</a></li>
+                    </ul>
+                </nav>
+                <div class="module-progress-header">
+                    <span class="progress-label">Progress</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="module-progress" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Module Content -->
+        <main class="module-content">
+            <!-- Basics Section -->
+            <section id="basics" class="module-section">
+                <div class="section-header">
+                    <h2>📺 Display Technology Fundamentals</h2>
+                    <p>Master the fundamentals of display technologies used in railway signaling systems</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>Introduction to Display Technologies</h3>
+                        <p>Display technologies convert electrical signals into visual information. In railway signaling, displays are crucial for operator interfaces, status indicators, and passenger information systems.</p>
+                        
+                        <div class="key-points">
+                            <h4>Key Points:</h4>
+                            <ul>
+                                <li>Visual information output devices</li>
+                                <li>Essential for human-machine interface</li>
+                                <li>Critical in railway safety systems</li>
+                                <li>Range from simple LEDs to complex matrices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Display Technology Comparison</h3>
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Technology</th>
+                                        <th>Power</th>
+                                        <th>Visibility</th>
+                                        <th>Cost</th>
+                                        <th>Applications</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>LED</strong></td>
+                                        <td>Low</td>
+                                        <td>Excellent</td>
+                                        <td>Low</td>
+                                        <td>Indicators, 7-segment</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>LCD</strong></td>
+                                        <td>Very Low</td>
+                                        <td>Good</td>
+                                        <td>Medium</td>
+                                        <td>Text display, graphics</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>OLED</strong></td>
+                                        <td>Low-Medium</td>
+                                        <td>Excellent</td>
+                                        <td>High</td>
+                                        <td>High-end displays</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>Railway Display Applications</h3>
+                    <div class="applications-grid">
+                        <div class="application-card" data-app="signal-aspect">
+                            <div class="app-icon">🚥</div>
+                            <h4>Signal Aspect Display</h4>
+                            <p>LED matrix displays showing signal aspects</p>
+                            <div class="app-details">
+                                <span class="tech-badge">LED Matrix</span>
+                                <span class="req-badge">High brightness, weather resistance</span>
+                            </div>
+                        </div>
+                        <div class="application-card" data-app="info-board">
+                            <div class="app-icon">📋</div>
+                            <h4>Station Information Board</h4>
+                            <p>Passenger information display systems</p>
+                            <div class="app-details">
+                                <span class="tech-badge">LCD/LED Matrix</span>
+                                <span class="req-badge">Large size, network connectivity</span>
+                            </div>
+                        </div>
+                        <div class="application-card" data-app="control-panel">
+                            <div class="app-icon">🖥️</div>
+                            <h4>Control Panel Displays</h4>
+                            <p>Operator interface displays in signal boxes</p>
+                            <div class="app-details">
+                                <span class="tech-badge">LCD Character/Graphics</span>
+                                <span class="req-badge">Reliability, easy reading</span>
+                            </div>
+                        </div>
+                        <div class="application-card" data-app="track-status">
+                            <div class="app-icon">💡</div>
+                            <h4>Track Status Indicators</h4>
+                            <p>Simple LED indicators for track occupancy</p>
+                            <div class="app-details">
+                                <span class="tech-badge">Single LEDs</span>
+                                <span class="req-badge">Low power, high reliability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LED Displays Section -->
+            <section id="led-displays" class="module-section">
+                <div class="section-header">
+                    <h2>💡 LED Display Systems</h2>
+                    <p>Learn about LED technology, 7-segment displays, and matrix systems</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>Seven-Segment Displays</h3>
+                        <p>Seven-segment displays use seven LEDs arranged to form digits 0-9. Each segment is labeled a-g, with an optional decimal point.</p>
+                        
+                        <div class="seven-segment-demo">
+                            <div class="display-container">
+                                <div class="seven-segment" id="demo-display">
+                                    <div class="segment segment-a" data-segment="a"></div>
+                                    <div class="segment segment-b" data-segment="b"></div>
+                                    <div class="segment segment-c" data-segment="c"></div>
+                                    <div class="segment segment-d" data-segment="d"></div>
+                                    <div class="segment segment-e" data-segment="e"></div>
+                                    <div class="segment segment-f" data-segment="f"></div>
+                                    <div class="segment segment-g" data-segment="g"></div>
+                                    <div class="segment segment-dp" data-segment="dp"></div>
+                                </div>
+                                <div class="segment-labels">
+                                    <div class="label-item">a: Top horizontal</div>
+                                    <div class="label-item">b: Top right vertical</div>
+                                    <div class="label-item">c: Bottom right vertical</div>
+                                    <div class="label-item">d: Bottom horizontal</div>
+                                    <div class="label-item">e: Bottom left vertical</div>
+                                    <div class="label-item">f: Top left vertical</div>
+                                    <div class="label-item">g: Middle horizontal</div>
+                                    <div class="label-item">dp: Decimal point</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="interactive-controls">
+                            <h4>Test Digit Display</h4>
+                            <div class="digit-buttons">
+                                <button class="digit-btn" onclick="displayDigit(0)">0</button>
+                                <button class="digit-btn" onclick="displayDigit(1)">1</button>
+                                <button class="digit-btn" onclick="displayDigit(2)">2</button>
+                                <button class="digit-btn" onclick="displayDigit(3)">3</button>
+                                <button class="digit-btn" onclick="displayDigit(4)">4</button>
+                                <button class="digit-btn" onclick="displayDigit(5)">5</button>
+                                <button class="digit-btn" onclick="displayDigit(6)">6</button>
+                                <button class="digit-btn" onclick="displayDigit(7)">7</button>
+                                <button class="digit-btn" onclick="displayDigit(8)">8</button>
+                                <button class="digit-btn" onclick="displayDigit(9)">9</button>
+                                <button class="digit-btn" onclick="clearDisplay()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>BCD to 7-Segment Decoder</h3>
+                        <p>Logic circuits that convert Binary Coded Decimal (BCD) inputs to seven-segment display outputs.</p>
+                        
+                        <div class="decoder-demo">
+                            <div class="bcd-inputs">
+                                <h4>BCD Input (4-bit)</h4>
+                                <div class="input-group">
+                                    <label>D (MSB):</label>
+                                    <select id="bcd-d" onchange="updateBCDDecoder()">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>C:</label>
+                                    <select id="bcd-c" onchange="updateBCDDecoder()">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>B:</label>
+                                    <select id="bcd-b" onchange="updateBCDDecoder()">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>A (LSB):</label>
+                                    <select id="bcd-a" onchange="updateBCDDecoder()">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                                <div class="bcd-result">
+                                    <strong>Decimal: <span id="bcd-decimal">0</span></strong>
+                                </div>
+                            </div>
+                            
+                            <div class="decoder-output">
+                                <h4>7-Segment Output</h4>
+                                <div class="seven-segment small" id="bcd-display">
+                                    <div class="segment segment-a" data-segment="a"></div>
+                                    <div class="segment segment-b" data-segment="b"></div>
+                                    <div class="segment segment-c" data-segment="c"></div>
+                                    <div class="segment segment-d" data-segment="d"></div>
+                                    <div class="segment segment-e" data-segment="e"></div>
+                                    <div class="segment segment-f" data-segment="f"></div>
+                                    <div class="segment segment-g" data-segment="g"></div>
+                                </div>
+                                <div class="active-segments">
+                                    Active segments: <span id="active-segments">abcdef</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulators Section -->
+            <section id="simulators" class="module-section">
+                <div class="section-header">
+                    <h2>🔧 Interactive Simulators</h2>
+                    <p>Practice with real-time display simulators</p>
+                </div>
+
+                <div class="simulators-grid">
+                    <!-- 7-Segment Display Simulator -->
+                    <div class="simulator-card">
+                        <h3>7-Segment Display Simulator</h3>
+                        <div class="simulator-content">
+                            <div class="multi-digit-display">
+                                <div class="digit-display">
+                                    <div class="seven-segment" id="sim-digit-0">
+                                        <div class="segment segment-a"></div>
+                                        <div class="segment segment-b"></div>
+                                        <div class="segment segment-c"></div>
+                                        <div class="segment segment-d"></div>
+                                        <div class="segment segment-e"></div>
+                                        <div class="segment segment-f"></div>
+                                        <div class="segment segment-g"></div>
+                                        <div class="segment segment-dp"></div>
+                                    </div>
+                                    <label>Digit 1</label>
+                                </div>
+                                <div class="digit-display">
+                                    <div class="seven-segment" id="sim-digit-1">
+                                        <div class="segment segment-a"></div>
+                                        <div class="segment segment-b"></div>
+                                        <div class="segment segment-c"></div>
+                                        <div class="segment segment-d"></div>
+                                        <div class="segment segment-e"></div>
+                                        <div class="segment segment-f"></div>
+                                        <div class="segment segment-g"></div>
+                                        <div class="segment segment-dp"></div>
+                                    </div>
+                                    <label>Digit 2</label>
+                                </div>
+                                <div class="digit-display">
+                                    <div class="seven-segment" id="sim-digit-2">
+                                        <div class="segment segment-a"></div>
+                                        <div class="segment segment-b"></div>
+                                        <div class="segment segment-c"></div>
+                                        <div class="segment segment-d"></div>
+                                        <div class="segment segment-e"></div>
+                                        <div class="segment segment-f"></div>
+                                        <div class="segment segment-g"></div>
+                                        <div class="segment segment-dp"></div>
+                                    </div>
+                                    <label>Digit 3</label>
+                                </div>
+                                <div class="digit-display">
+                                    <div class="seven-segment" id="sim-digit-3">
+                                        <div class="segment segment-a"></div>
+                                        <div class="segment segment-b"></div>
+                                        <div class="segment segment-c"></div>
+                                        <div class="segment segment-d"></div>
+                                        <div class="segment segment-e"></div>
+                                        <div class="segment segment-f"></div>
+                                        <div class="segment segment-g"></div>
+                                        <div class="segment segment-dp"></div>
+                                    </div>
+                                    <label>Digit 4</label>
+                                </div>
+                            </div>
+                            
+                            <div class="simulator-controls">
+                                <div class="control-group">
+                                    <label for="display-value">Enter Number:</label>
+                                    <input type="number" id="display-value" placeholder="0-9999" max="9999" min="0">
+                                    <button onclick="updateMultiDigitDisplay()" class="control-btn">Display</button>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>Common Type:</label>
+                                    <select id="common-type" onchange="toggleCommonType()">
+                                        <option value="cathode">Common Cathode</option>
+                                        <option value="anode">Common Anode</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <button onclick="startMultiplexDemo()" class="control-btn">Multiplexing Demo</button>
+                                    <button onclick="stopMultiplexDemo()" class="control-btn">Stop Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LCD Character Display Simulator -->
+                    <div class="simulator-card">
+                        <h3>LCD Character Display Simulator</h3>
+                        <div class="simulator-content">
+                            <div class="lcd-simulator">
+                                <div class="lcd-screen">
+                                    <div class="lcd-row" id="lcd-row-0">
+                                        <span class="lcd-char" data-pos="0"> </span>
+                                        <span class="lcd-char" data-pos="1"> </span>
+                                        <span class="lcd-char" data-pos="2"> </span>
+                                        <span class="lcd-char" data-pos="3"> </span>
+                                        <span class="lcd-char" data-pos="4"> </span>
+                                        <span class="lcd-char" data-pos="5"> </span>
+                                        <span class="lcd-char" data-pos="6"> </span>
+                                        <span class="lcd-char" data-pos="7"> </span>
+                                        <span class="lcd-char" data-pos="8"> </span>
+                                        <span class="lcd-char" data-pos="9"> </span>
+                                        <span class="lcd-char" data-pos="10"> </span>
+                                        <span class="lcd-char" data-pos="11"> </span>
+                                        <span class="lcd-char" data-pos="12"> </span>
+                                        <span class="lcd-char" data-pos="13"> </span>
+                                        <span class="lcd-char" data-pos="14"> </span>
+                                        <span class="lcd-char" data-pos="15"> </span>
+                                    </div>
+                                    <div class="lcd-row" id="lcd-row-1">
+                                        <span class="lcd-char" data-pos="0"> </span>
+                                        <span class="lcd-char" data-pos="1"> </span>
+                                        <span class="lcd-char" data-pos="2"> </span>
+                                        <span class="lcd-char" data-pos="3"> </span>
+                                        <span class="lcd-char" data-pos="4"> </span>
+                                        <span class="lcd-char" data-pos="5"> </span>
+                                        <span class="lcd-char" data-pos="6"> </span>
+                                        <span class="lcd-char" data-pos="7"> </span>
+                                        <span class="lcd-char" data-pos="8"> </span>
+                                        <span class="lcd-char" data-pos="9"> </span>
+                                        <span class="lcd-char" data-pos="10"> </span>
+                                        <span class="lcd-char" data-pos="11"> </span>
+                                        <span class="lcd-char" data-pos="12"> </span>
+                                        <span class="lcd-char" data-pos="13"> </span>
+                                        <span class="lcd-char" data-pos="14"> </span>
+                                        <span class="lcd-char" data-pos="15"> </span>
+                                    </div>
+                                    <div class="lcd-cursor" id="lcd-cursor"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="lcd-controls">
+                                <div class="control-group">
+                                    <label for="lcd-text">Text to Display:</label>
+                                    <input type="text" id="lcd-text" placeholder="Enter text..." maxlength="32">
+                                    <button onclick="displayLCDText()" class="control-btn">Display</button>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>LCD Commands:</label>
+                                    <div class="command-buttons">
+                                        <button onclick="lcdCommand('clear')" class="cmd-btn">Clear</button>
+                                        <button onclick="lcdCommand('home')" class="cmd-btn">Home</button>
+                                        <button onclick="lcdCommand('cursor-on')" class="cmd-btn">Cursor On</button>
+                                        <button onclick="lcdCommand('cursor-off')" class="cmd-btn">Cursor Off</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>Position Control:</label>
+                                    <div class="position-controls">
+                                        <label for="cursor-row">Row:</label>
+                                        <select id="cursor-row">
+                                            <option value="0">1</option>
+                                            <option value="1">2</option>
+                                        </select>
+                                        <label for="cursor-col">Column:</label>
+                                        <input type="number" id="cursor-col" min="0" max="15" value="0">
+                                        <button onclick="setCursorPosition()" class="control-btn">Set Position</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Module Navigation Footer -->
+        <footer class="module-footer">
+            <div class="footer-nav">
+                <button class="nav-btn secondary" onclick="goToHome()">🏠 Home</button>
+                <button class="nav-btn secondary" onclick="previousModule()">← Module 6: Transducers</button>
+                <button class="nav-btn secondary" onclick="openExamSimulator()">📋 Exam Simulator</button>
+                <button class="nav-btn secondary" onclick="openCircuitBuilder()">🔧 Circuit Builder</button>
+            </div>
+            <div class="module-progress-footer">
+                <span>Module 7 Progress: <span id="footer-progress">0%</span></span>
+                <button class="btn-success" onclick="markModuleComplete()" id="complete-btn" style="display: none;">
+                    ✓ Mark as Complete
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js"></script>
+    <script src="display-tech.js"></script>
+</body>
+</html>

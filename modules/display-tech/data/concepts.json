@@ -1,0 +1,345 @@
+{
+  "module": {
+    "id": "display-tech",
+    "title": "Display Technologies",
+    "description": "Master LED, LCD, OLED displays and interfacing for railway signal systems",
+    "weightage": 10,
+    "estimatedHours": "4-6",
+    "objectives": [
+      "Understand different display technologies and their applications",
+      "Master 7-segment and LCD interfacing techniques",
+      "Learn driver circuits and multiplexing methods",
+      "Analyze power consumption and optimization",
+      "Design display systems for railway signaling"
+    ]
+  },
+  "sections": {
+    "basics": {
+      "title": "Display Technology Fundamentals",
+      "objectives": [
+        "Compare different display technologies",
+        "Understand working principles",
+        "Identify applications in railway systems"
+      ],
+      "content": [
+        {
+          "type": "concept",
+          "title": "Introduction to Display Technologies",
+          "content": "Display technologies convert electrical signals into visual information. In railway signaling, displays are crucial for operator interfaces, status indicators, and passenger information systems.",
+          "keyPoints": [
+            "Visual information output devices",
+            "Essential for human-machine interface",
+            "Critical in railway safety systems",
+            "Range from simple LEDs to complex matrices"
+          ]
+        },
+        {
+          "type": "comparison",
+          "title": "Display Technology Comparison",
+          "data": {
+            "technologies": [
+              {
+                "name": "LED",
+                "power": "Low",
+                "visibility": "Excellent",
+                "cost": "Low",
+                "applications": "Indicators, 7-segment"
+              },
+              {
+                "name": "LCD",
+                "power": "Very Low",
+                "visibility": "Good",
+                "cost": "Medium",
+                "applications": "Text display, graphics"
+              },
+              {
+                "name": "OLED",
+                "power": "Low-Medium",
+                "visibility": "Excellent",
+                "cost": "High",
+                "applications": "High-end displays"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "led-displays": {
+      "title": "LED Display Systems",
+      "objectives": [
+        "Master 7-segment display operation",
+        "Understand LED matrix systems",
+        "Learn multiplexing techniques"
+      ],
+      "content": [
+        {
+          "type": "concept",
+          "title": "Seven-Segment Displays",
+          "content": "Seven-segment displays use seven LEDs arranged to form digits 0-9. Each segment is labeled a-g, with an optional decimal point.",
+          "keyPoints": [
+            "Seven LEDs arranged in figure-8 pattern",
+            "Common anode or common cathode configuration",
+            "BCD to 7-segment decoder circuits",
+            "Multiplexing for multiple digits"
+          ],
+          "segments": {
+            "a": "Top horizontal",
+            "b": "Top right vertical", 
+            "c": "Bottom right vertical",
+            "d": "Bottom horizontal",
+            "e": "Bottom left vertical",
+            "f": "Top left vertical",
+            "g": "Middle horizontal"
+          }
+        },
+        {
+          "type": "decoder",
+          "title": "BCD to 7-Segment Decoder",
+          "content": "Logic circuits that convert Binary Coded Decimal (BCD) inputs to seven-segment display outputs.",
+          "truthTable": [
+            {"bcd": "0000", "decimal": 0, "segments": "abcdef", "display": "0"},
+            {"bcd": "0001", "decimal": 1, "segments": "bc", "display": "1"},
+            {"bcd": "0010", "decimal": 2, "segments": "abged", "display": "2"},
+            {"bcd": "0011", "decimal": 3, "segments": "abgcd", "display": "3"},
+            {"bcd": "0100", "decimal": 4, "segments": "fgbc", "display": "4"},
+            {"bcd": "0101", "decimal": 5, "segments": "afgcd", "display": "5"},
+            {"bcd": "0110", "decimal": 6, "segments": "afgedc", "display": "6"},
+            {"bcd": "0111", "decimal": 7, "segments": "abc", "display": "7"},
+            {"bcd": "1000", "decimal": 8, "segments": "abcdefg", "display": "8"},
+            {"bcd": "1001", "decimal": 9, "segments": "abcdfg", "display": "9"}
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "LED Matrix Displays",
+          "content": "Two-dimensional arrays of LEDs arranged in rows and columns for displaying text, numbers, or graphics.",
+          "keyPoints": [
+            "Row and column addressing",
+            "Multiplexing for reduced pin count",
+            "Persistence of vision effect",
+            "Driver ICs for control"
+          ]
+        }
+      ]
+    },
+    "lcd-technology": {
+      "title": "LCD Technology",
+      "objectives": [
+        "Understand LCD working principles",
+        "Master character LCD interfacing",
+        "Learn graphics LCD systems"
+      ],
+      "content": [
+        {
+          "type": "concept",
+          "title": "LCD Working Principle",
+          "content": "Liquid Crystal Displays use liquid crystals that can be electrically controlled to block or allow light passage.",
+          "keyPoints": [
+            "Liquid crystals between polarized filters",
+            "Voltage controls crystal orientation",
+            "Backlight provides illumination",
+            "Very low power consumption"
+          ]
+        },
+        {
+          "type": "interfacing",
+          "title": "Character LCD Interfacing",
+          "content": "16x2 and 20x4 character LCDs are commonly used in embedded systems for text display.",
+          "pinout": {
+            "VSS": "Ground",
+            "VDD": "Power supply (+5V)",
+            "V0": "Contrast adjustment",
+            "RS": "Register Select",
+            "Enable": "Enable signal",
+            "D0-D7": "Data bus (8-bit mode)",
+            "A": "Backlight anode",
+            "K": "Backlight cathode"
+          },
+          "commands": [
+            {"hex": "0x01", "function": "Clear display"},
+            {"hex": "0x02", "function": "Return home"},
+            {"hex": "0x06", "function": "Entry mode set"},
+            {"hex": "0x0C", "function": "Display on"},
+            {"hex": "0x38", "function": "Function set (8-bit)"},
+            {"hex": "0x80", "function": "Set DDRAM address"}
+          ]
+        }
+      ]
+    },
+    "driver-circuits": {
+      "title": "Driver Circuits and Control",
+      "objectives": [
+        "Design LED driver circuits",
+        "Understand current limiting",
+        "Learn multiplexing control"
+      ],
+      "content": [
+        {
+          "type": "concept",
+          "title": "LED Driver Circuits",
+          "content": "Driver circuits provide proper current and voltage levels to operate LEDs safely and efficiently.",
+          "keyPoints": [
+            "Current limiting resistors",
+            "Transistor drivers for high current",
+            "IC drivers for multiple LEDs",
+            "Power dissipation considerations"
+          ]
+        },
+        {
+          "type": "calculation",
+          "title": "Current Limiting Resistor",
+          "formula": "R = (Vsupply - VLED) / ILED",
+          "parameters": {
+            "Vsupply": "Supply voltage (V)",
+            "VLED": "LED forward voltage (V)",
+            "ILED": "LED current (mA)",
+            "R": "Resistance (Ω)"
+          },
+          "example": {
+            "Vsupply": 5,
+            "VLED": 2.0,
+            "ILED": 20,
+            "result": "R = (5 - 2.0) / 0.02 = 150Ω"
+          }
+        }
+      ]
+    },
+    "interface-protocols": {
+      "title": "Interface Protocols",
+      "objectives": [
+        "Learn SPI interface for displays",
+        "Understand I2C communication",
+        "Master parallel interfacing"
+      ],
+      "content": [
+        {
+          "type": "protocol",
+          "title": "SPI Interface",
+          "content": "Serial Peripheral Interface provides high-speed communication for display modules.",
+          "signals": {
+            "SCLK": "Serial Clock",
+            "MOSI": "Master Out Slave In",
+            "MISO": "Master In Slave Out", 
+            "CS": "Chip Select"
+          },
+          "advantages": [
+            "High speed communication",
+            "Simple implementation",
+            "Multiple devices on same bus",
+            "No addressing required"
+          ]
+        },
+        {
+          "type": "protocol",
+          "title": "I2C Interface",
+          "content": "Inter-Integrated Circuit protocol allows multiple devices on a two-wire bus.",
+          "signals": {
+            "SDA": "Serial Data",
+            "SCL": "Serial Clock"
+          },
+          "features": [
+            "Only two wires required",
+            "Multiple devices addressable",
+            "Built-in acknowledgment",
+            "Lower speed than SPI"
+          ]
+        }
+      ]
+    },
+    "power-analysis": {
+      "title": "Power Consumption Analysis",
+      "objectives": [
+        "Calculate display power consumption",
+        "Optimize for battery operation",
+        "Learn power saving techniques"
+      ],
+      "content": [
+        {
+          "type": "calculation",
+          "title": "LED Power Calculation",
+          "formula": "P = V × I × N",
+          "parameters": {
+            "V": "LED voltage (V)",
+            "I": "LED current (A)",
+            "N": "Number of LEDs",
+            "P": "Total power (W)"
+          }
+        },
+        {
+          "type": "optimization",
+          "title": "Power Saving Techniques",
+          "techniques": [
+            "PWM brightness control",
+            "Multiplexing to reduce average current",
+            "Sleep modes for LCD displays",
+            "Backlight control based on ambient light",
+            "Dynamic refresh rate adjustment"
+          ]
+        }
+      ]
+    }
+  },
+  "simulations": {
+    "sevenSegment": {
+      "title": "7-Segment Display Simulator",
+      "description": "Interactive simulator for 7-segment displays with BCD input",
+      "features": [
+        "Real-time segment control",
+        "BCD to 7-segment conversion",
+        "Common anode/cathode modes",
+        "Multiple digit display"
+      ]
+    },
+    "lcdCharacter": {
+      "title": "LCD Character Display Simulator", 
+      "description": "16x2 LCD character display with command interface",
+      "features": [
+        "Character writing simulation",
+        "Command execution",
+        "Cursor positioning",
+        "Custom character creation"
+      ]
+    },
+    "driverCalculator": {
+      "title": "Driver Circuit Calculator",
+      "description": "Calculate resistor values and power consumption",
+      "features": [
+        "Current limiting resistor calculation",
+        "Power dissipation analysis",
+        "Component selection guide",
+        "Efficiency optimization"
+      ]
+    }
+  },
+  "applications": {
+    "railway": {
+      "title": "Railway Signal Applications",
+      "examples": [
+        {
+          "application": "Signal Aspect Display",
+          "description": "LED matrix displays showing signal aspects",
+          "technology": "LED Matrix",
+          "requirements": "High brightness, weather resistance"
+        },
+        {
+          "application": "Station Information Board",
+          "description": "Passenger information display systems",
+          "technology": "LCD/LED Matrix",
+          "requirements": "Large size, network connectivity"
+        },
+        {
+          "application": "Control Panel Displays",
+          "description": "Operator interface displays in signal boxes",
+          "technology": "LCD Character/Graphics",
+          "requirements": "Reliability, easy reading"
+        },
+        {
+          "application": "Track Status Indicators",
+          "description": "Simple LED indicators for track occupancy",
+          "technology": "Single LEDs",
+          "requirements": "Low power, high reliability"
+        }
+      ]
+    }
+  }
+}

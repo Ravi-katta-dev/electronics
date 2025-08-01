@@ -1,0 +1,432 @@
+{
+  "exercises": [
+    {
+      "id": "dt_001",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "topic": "display-basics",
+      "question": "Which display technology consumes the least power?",
+      "options": [
+        "LED display",
+        "LCD display", 
+        "OLED display",
+        "CRT display"
+      ],
+      "correctAnswer": 1,
+      "explanation": "LCD displays consume very little power because they don't generate light themselves, instead using a backlight with liquid crystals that block or allow light passage.",
+      "points": 2,
+      "timeLimit": 30,
+      "tags": ["power-consumption", "comparison"]
+    },
+    {
+      "id": "dt_002", 
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "topic": "seven-segment",
+      "question": "How many segments are there in a standard 7-segment display?",
+      "options": [
+        "6 segments",
+        "7 segments",
+        "8 segments (including decimal point)",
+        "9 segments"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A standard 7-segment display has 7 segments (a-g) plus an optional decimal point, making 8 total controllable elements.",
+      "points": 2,
+      "timeLimit": 20,
+      "tags": ["seven-segment", "basic-concepts"]
+    },
+    {
+      "id": "dt_003",
+      "type": "multiple-choice", 
+      "difficulty": "medium",
+      "topic": "seven-segment",
+      "question": "To display the digit '3' on a 7-segment display, which segments should be ON?",
+      "options": [
+        "a, b, c, d, g",
+        "a, b, g, c, d",
+        "a, f, g, c, d", 
+        "b, c, f, g, e"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The digit '3' requires segments a (top), b (top-right), g (middle), c (bottom-right), and d (bottom) to be ON.",
+      "points": 3,
+      "timeLimit": 45,
+      "tags": ["seven-segment", "decoding"]
+    },
+    {
+      "id": "dt_004",
+      "type": "calculation",
+      "difficulty": "medium",
+      "topic": "driver-circuits",
+      "question": "Calculate the current limiting resistor for an LED with forward voltage 2.1V, desired current 15mA, and supply voltage 5V.",
+      "formula": "R = (Vsupply - VLED) / ILED",
+      "givens": {
+        "Vsupply": "5V",
+        "VLED": "2.1V", 
+        "ILED": "15mA"
+      },
+      "correctAnswer": "193.3",
+      "unit": "Ω",
+      "tolerance": 5,
+      "explanation": "R = (5 - 2.1) / 0.015 = 2.9 / 0.015 = 193.3Ω. The nearest standard resistor would be 200Ω.",
+      "points": 4,
+      "timeLimit": 60,
+      "tags": ["calculations", "resistor", "led-driver"]
+    },
+    {
+      "id": "dt_005",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "topic": "lcd-interface",
+      "question": "In LCD interfacing, what is the purpose of the RS (Register Select) pin?",
+      "options": [
+        "Reset the LCD",
+        "Select between command and data registers",
+        "Control the refresh rate",
+        "Enable the backlight"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The RS pin selects between command register (RS=0) for sending commands and data register (RS=1) for sending data to be displayed.",
+      "points": 2,
+      "timeLimit": 30,
+      "tags": ["lcd-interface", "control-signals"]
+    },
+    {
+      "id": "dt_006",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "topic": "lcd-interface", 
+      "question": "What is the hex command to clear the display on a standard character LCD?",
+      "options": [
+        "0x00",
+        "0x01",
+        "0x02",
+        "0x0C"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The command 0x01 clears the entire display and returns the cursor to the home position (0,0).",
+      "points": 3,
+      "timeLimit": 30,
+      "tags": ["lcd-commands", "hex-codes"]
+    },
+    {
+      "id": "dt_007",
+      "type": "true-false",
+      "difficulty": "easy", 
+      "topic": "multiplexing",
+      "question": "Multiplexing allows multiple 7-segment displays to be controlled with fewer pins than individual control.",
+      "correctAnswer": true,
+      "explanation": "Multiplexing time-shares control signals between multiple displays, significantly reducing the number of required pins.",
+      "points": 2,
+      "timeLimit": 20,
+      "tags": ["multiplexing", "pin-reduction"]
+    },
+    {
+      "id": "dt_008",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "topic": "power-calculation",
+      "question": "A 4-digit 7-segment display with multiplexing operates each digit for 25% of the time. If each segment draws 20mA at 2V, what is the average power consumption?",
+      "options": [
+        "1.12W",
+        "0.28W", 
+        "0.56W",
+        "2.24W"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Each digit has max 7 segments × 20mA = 140mA. With 25% duty cycle: 140mA × 0.25 = 35mA average per digit. Total: 4 × 35mA × 2V = 0.28W",
+      "points": 5,
+      "timeLimit": 90,
+      "tags": ["power-calculation", "multiplexing", "advanced"]
+    },
+    {
+      "id": "dt_009",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "topic": "interface-protocols",
+      "question": "Which interface protocol requires only 2 wires for communication?",
+      "options": [
+        "SPI",
+        "UART",
+        "I2C",
+        "Parallel"
+      ],
+      "correctAnswer": 2,
+      "explanation": "I2C (Inter-Integrated Circuit) uses only two wires: SDA (Serial Data) and SCL (Serial Clock), making it very efficient for connecting multiple devices.",
+      "points": 3,
+      "timeLimit": 30,
+      "tags": ["protocols", "i2c", "communication"]
+    },
+    {
+      "id": "dt_010",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "topic": "bcd-decoding",
+      "question": "In BCD to 7-segment decoding, what is the Boolean expression for segment 'a'?",
+      "options": [
+        "A̅B̅C̅D̅ + AB̅C̅D̅ + A̅B̅CD̅ + A̅BCD̅",
+        "A̅B̅C̅D̅ + A̅B̅C̅D + A̅B̅CD̅ + A̅BCD + AB̅C̅D̅ + AB̅CD + ABC̅D̅ + ABCD̅",
+        "AB̅C̅D̅ + A̅BC̅D̅ + A̅B̅CD + A̅B̅C̅D",
+        "A̅B̅C̅D + A̅BC̅D + AB̅C̅D + ABC̅D̅"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Segment 'a' is ON for digits 0,2,3,5,6,7,8,9. The Boolean expression represents all these combinations in BCD format.",
+      "points": 6,
+      "timeLimit": 120,
+      "tags": ["boolean-algebra", "bcd-decoding", "expert"]
+    },
+    {
+      "id": "dt_011",
+      "type": "fill-in-the-blank",
+      "difficulty": "medium",
+      "topic": "lcd-timing",
+      "question": "The minimum Enable pulse width for most character LCDs is ______ microseconds.",
+      "correctAnswer": "450",
+      "tolerance": 50,
+      "explanation": "Most HD44780-compatible LCDs require a minimum Enable pulse width of 450μs for reliable operation.",
+      "points": 3,
+      "timeLimit": 45,
+      "tags": ["lcd-timing", "specifications"]
+    },
+    {
+      "id": "dt_012", 
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "topic": "oled-technology",
+      "question": "What is the main advantage of OLED displays over LCD displays?",
+      "options": [
+        "Lower cost",
+        "Better contrast ratio and no backlight needed",
+        "Higher resolution",
+        "Longer lifespan"
+      ],
+      "correctAnswer": 1,
+      "explanation": "OLED displays emit their own light, providing perfect blacks and infinite contrast ratio while eliminating the need for a backlight.",
+      "points": 3,
+      "timeLimit": 30,
+      "tags": ["oled", "comparison", "advantages"]
+    },
+    {
+      "id": "dt_013",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "topic": "common-cathode",
+      "question": "In a common cathode 7-segment display, to turn ON a segment you must:",
+      "options": [
+        "Apply LOW to the segment pin",
+        "Apply HIGH to the segment pin", 
+        "Apply HIGH to the common pin",
+        "Ground the segment pin"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In common cathode configuration, the cathodes are connected together and grounded. To turn ON a segment, you apply HIGH (positive voltage) to the segment anode.",
+      "points": 2,
+      "timeLimit": 30,
+      "tags": ["common-cathode", "seven-segment", "basics"]
+    },
+    {
+      "id": "dt_014",
+      "type": "calculation",
+      "difficulty": "hard",
+      "topic": "multiplexing-frequency",
+      "question": "For a 6-digit multiplexed display to avoid visible flicker, what minimum refresh rate per digit is needed?",
+      "givens": {
+        "digits": "6",
+        "min_refresh_rate": "50Hz",
+        "persistence_of_vision": "16ms"
+      },
+      "correctAnswer": "300",
+      "unit": "Hz",
+      "tolerance": 10,
+      "explanation": "For no flicker, each digit needs at least 50Hz refresh. With 6 digits: 6 × 50Hz = 300Hz total switching frequency.",
+      "points": 5,
+      "timeLimit": 75,
+      "tags": ["multiplexing", "frequency", "flicker"]
+    },
+    {
+      "id": "dt_015",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "topic": "dot-matrix",
+      "question": "An 8×8 LED dot matrix display without multiplexing would require how many pins?",
+      "options": [
+        "16 pins",
+        "64 pins",
+        "32 pins", 
+        "8 pins"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Without multiplexing, each of the 64 LEDs (8×8) would need its own control pin, requiring 64 pins total.",
+      "points": 3,
+      "timeLimit": 45,
+      "tags": ["dot-matrix", "pin-count", "multiplexing"]
+    },
+    {
+      "id": "dt_016",
+      "type": "true-false",
+      "difficulty": "easy",
+      "topic": "lcd-backlight",
+      "question": "LCD displays can operate without a backlight in complete darkness.",
+      "correctAnswer": false,
+      "explanation": "LCD displays require external light (either backlight or ambient light) to be visible since they don't emit light themselves.",
+      "points": 2,
+      "timeLimit": 20,
+      "tags": ["lcd", "backlight", "principles"]
+    },
+    {
+      "id": "dt_017",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "topic": "driver-ic",
+      "question": "The MAX7219 IC can drive how many 7-segment displays?",
+      "options": [
+        "4 displays",
+        "6 displays",
+        "8 displays",
+        "16 displays"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The MAX7219 is specifically designed to drive up to 8 seven-segment displays with multiplexing and includes internal current limiting.",
+      "points": 4,
+      "timeLimit": 45,
+      "tags": ["driver-ic", "max7219", "specifications"]
+    },
+    {
+      "id": "dt_018",
+      "type": "calculation",
+      "difficulty": "medium",
+      "topic": "power-efficiency",
+      "question": "If PWM brightness control reduces LED current to 60% of maximum, what is the power saving percentage?",
+      "givens": {
+        "current_reduction": "60%",
+        "voltage_constant": "true"
+      },
+      "correctAnswer": "40",
+      "unit": "%",
+      "tolerance": 2,
+      "explanation": "Since power P = V × I and voltage is constant, 60% current means 60% power consumption, so power saving = 100% - 60% = 40%",
+      "points": 3,
+      "timeLimit": 45,
+      "tags": ["pwm", "power-saving", "efficiency"]
+    },
+    {
+      "id": "dt_019",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "topic": "spi-interface",
+      "question": "In SPI communication for displays, the MISO line is:",
+      "options": [
+        "Always required",
+        "Used for status feedback",
+        "Often not connected for write-only displays", 
+        "Used for error detection"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Many display modules are write-only devices and don't send data back to the controller, so MISO is often not connected.",
+      "points": 3,
+      "timeLimit": 40,
+      "tags": ["spi", "communication", "interface"]
+    },
+    {
+      "id": "dt_020",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "topic": "railway-applications",
+      "question": "For railway signal aspect displays that must be visible in bright sunlight, which technology is most suitable?",
+      "options": [
+        "Standard LCD with backlight",
+        "High-brightness LED matrix",
+        "OLED display",
+        "E-ink display"
+      ],
+      "correctAnswer": 1,
+      "explanation": "High-brightness LED displays can produce much more light than LCDs or OLEDs, making them ideal for outdoor railway signaling applications in bright sunlight.",
+      "points": 4,
+      "timeLimit": 60,
+      "tags": ["railway", "applications", "brightness", "outdoor"]
+    }
+  ],
+  "practicesets": [
+    {
+      "id": "basic_concepts",
+      "title": "Display Technology Basics",
+      "description": "Fundamental concepts and comparisons",
+      "difficulty": "easy",
+      "questions": ["dt_001", "dt_002", "dt_005", "dt_007", "dt_013", "dt_016"],
+      "timeLimit": 180,
+      "passingScore": 70
+    },
+    {
+      "id": "seven_segment_mastery", 
+      "title": "7-Segment Display Mastery",
+      "description": "Complete coverage of 7-segment technology",
+      "difficulty": "medium",
+      "questions": ["dt_002", "dt_003", "dt_013", "dt_015", "dt_017"],
+      "timeLimit": 240,
+      "passingScore": 75
+    },
+    {
+      "id": "lcd_interfacing",
+      "title": "LCD Interfacing and Control", 
+      "description": "LCD commands, timing, and interfacing",
+      "difficulty": "medium",
+      "questions": ["dt_005", "dt_006", "dt_011", "dt_016"],
+      "timeLimit": 180,
+      "passingScore": 75
+    },
+    {
+      "id": "calculations_and_design",
+      "title": "Circuit Design and Calculations",
+      "description": "Driver circuits, power, and calculations",
+      "difficulty": "hard", 
+      "questions": ["dt_004", "dt_008", "dt_014", "dt_018"],
+      "timeLimit": 300,
+      "passingScore": 80
+    },
+    {
+      "id": "advanced_topics",
+      "title": "Advanced Display Technologies",
+      "description": "Complex topics and applications",
+      "difficulty": "hard",
+      "questions": ["dt_008", "dt_010", "dt_012", "dt_017", "dt_019", "dt_020"],
+      "timeLimit": 360,
+      "passingScore": 80
+    },
+    {
+      "id": "rrb_mock_test",
+      "title": "RRB Mock Test - Display Technology",
+      "description": "Complete mock test covering all topics",
+      "difficulty": "mixed",
+      "questions": ["dt_001", "dt_003", "dt_004", "dt_006", "dt_008", "dt_009", "dt_011", "dt_014", "dt_017", "dt_020"],
+      "timeLimit": 600,
+      "passingScore": 75
+    }
+  ],
+  "simulations": [
+    {
+      "id": "seven_segment_sim",
+      "title": "7-Segment Display Simulator",
+      "type": "interactive",
+      "description": "Build and test 7-segment display circuits",
+      "features": [
+        "BCD input controls",
+        "Individual segment control",
+        "Common anode/cathode selection",
+        "Multiplexing demonstration"
+      ]
+    },
+    {
+      "id": "lcd_character_sim",
+      "title": "LCD Character Display Simulator",
+      "type": "interactive", 
+      "description": "16x2 LCD with full command interface",
+      "features": [
+        "Character writing",
+        "Command execution",
+        "Cursor control",
+        "Custom characters"
+      ]
+    }
+  ]
+}
