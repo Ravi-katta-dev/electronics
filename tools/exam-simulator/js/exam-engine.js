@@ -36,8 +36,14 @@ class ExamSimulator {
   
   async loadQuestionBank() {
     try {
-      // Use relative path for GitHub Pages compatibility
-      const response = await fetch('./data/questions.json');
+      // Use proper path resolution for GitHub Pages compatibility
+      const basePath = window.githubPagesRouter ? window.githubPagesRouter.basePath : '';
+      const questionsPath = window.location.pathname.includes('/tools/exam-simulator/') 
+        ? './data/questions.json' 
+        : (basePath ? `${basePath}/tools/exam-simulator/data/questions.json` : './tools/exam-simulator/data/questions.json');
+      
+      console.log('Loading questions from:', questionsPath);
+      const response = await fetch(questionsPath);
       if (!response.ok) {
         throw new Error(`Failed to load questions: ${response.status}`);
       }
