@@ -106,15 +106,16 @@ class SimulationEngine {
   
   calculateImpedance(component, frequency) {
     // Calculate component impedance at frequency
+    // Returns complex impedance as {real, imag}
     switch (component.type) {
       case 'resistor':
-        return component.value;
+        return { real: component.value, imag: 0 };
       case 'capacitor':
-        return -1j / (2 * Math.PI * frequency * component.value);
+        return { real: 0, imag: -1 / (2 * Math.PI * frequency * component.value) };
       case 'inductor':
-        return 1j * 2 * Math.PI * frequency * component.value;
+        return { real: 0, imag: 2 * Math.PI * frequency * component.value };
       default:
-        return 0;
+        return { real: 0, imag: 0 };
     }
   }
 }
