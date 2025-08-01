@@ -2,12 +2,12 @@
   "name": "RRB Electronics Learning Platform",
   "short_name": "RRB Electronics",
   "description": "Interactive learning platform for RRB Tech Grade 1 Signal exam preparation",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4a90e2",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "./",
   "lang": "en",
   "categories": ["education", "productivity"],
   "screenshots": [
@@ -79,7 +79,7 @@
       "name": "Digital Logic Gates",
       "short_name": "Logic Gates",
       "description": "Access digital logic gates module",
-      "url": "/modules/digital-logic/",
+      "url": "./modules/digital-logic/",
       "icons": [
         {
           "src": "assets/images/icons/logic-gates.png",
@@ -91,7 +91,7 @@
       "name": "Circuit Builder",
       "short_name": "Circuit Builder",
       "description": "Open interactive circuit builder",
-      "url": "/tools/circuit-builder/",
+      "url": "./tools/circuit-builder/",
       "icons": [
         {
           "src": "assets/images/icons/circuit-builder.png",
@@ -103,7 +103,7 @@
       "name": "Exam Simulator",
       "short_name": "Mock Test",
       "description": "Start exam simulation",
-      "url": "/tools/exam-simulator/",
+      "url": "./tools/exam-simulator/",
       "icons": [
         {
           "src": "assets/images/icons/exam.png",
@@ -115,7 +115,7 @@
       "name": "Virtual Lab",
       "short_name": "Lab",
       "description": "Access virtual laboratory",
-      "url": "/tools/virtual-lab/",
+      "url": "./tools/virtual-lab/",
       "icons": [
         {
           "src": "assets/images/icons/virtual-lab.png",

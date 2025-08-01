@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - RRB Electronics Learning Platform</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
+    <style>
+        /* Minimal inline styles for 404 page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .error-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .error-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .error-message {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .redirect-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .redirect-info p {
+            margin-bottom: 10px;
+        }
+        
+        .countdown {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a6fd8;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .loading-spinner {
+            display: none;
+            margin: 20px auto;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            .error-container {
+                padding: 30px 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">
+            The page you're looking for doesn't exist or has been moved.
+            We're trying to find the right path for you...
+        </p>
+        
+        <div class="redirect-info">
+            <p>🔍 Attempting to redirect you to the correct page...</p>
+            <p class="countdown">Redirecting in <span id="countdown">5</span> seconds</p>
+            <div class="loading-spinner" id="loading"></div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/" class="btn btn-primary">Go to Home</a>
+            <a href="/tools/exam-simulator/" class="btn btn-secondary">Exam Simulator</a>
+            <button onclick="history.back()" class="btn btn-secondary">Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        // GitHub Pages compatible 404 handling and redirection
+        (function() {
+            // Get the path that caused the 404
+            const path = window.location.pathname;
+            const search = window.location.search;
+            const hash = window.location.hash;
+            
+            console.log('404 page loaded for path:', path);
+            
+            // Detect GitHub Pages base path
+            function detectBasePath() {
+                const hostname = window.location.hostname;
+                const pathname = window.location.pathname;
+
+                if (hostname.includes('github.io') && pathname !== '/') {
+                    const pathParts = pathname.split('/').filter(part => part.length > 0);
+                    if (pathParts.length > 0) {
+                        return '/' + pathParts[0];
+                    }
+                }
+                return '';
+            }
+            
+            const basePath = detectBasePath();
+            console.log('Detected base path:', basePath);
+            
+            // Common redirect patterns
+            const redirectPatterns = [
+                // Direct tool access
+                { pattern: /^\/tools\/exam-simulator\/?$/, target: '/tools/exam-simulator/index.html' },
+                { pattern: /^\/tools\/circuit-builder\/?$/, target: '/tools/circuit-builder/index.html' },
+                { pattern: /^\/tools\/virtual-lab\/?$/, target: '/tools/virtual-lab/index.html' },
+                
+                // Module access
+                { pattern: /^\/modules\/([^\/]+)\/?$/, target: '/modules/$1/index.html' },
+                
+                // Asset access
+                { pattern: /^\/assets\//, target: path },
+                
+                // Main app access
+                { pattern: /^\/?$/, target: '/index.html' },
+                { pattern: /^\/index\/?$/, target: '/index.html' }
+            ];
+            
+            // Find matching redirect
+            let redirectTarget = null;
+            for (const rule of redirectPatterns) {
+                const match = path.match(rule.pattern);
+                if (match) {
+                    redirectTarget = rule.target.replace(/\$(\d+)/g, (_, index) => match[parseInt(index)]);
+                    break;
+                }
+            }
+            
+            // Apply base path
+            if (redirectTarget) {
+                if (redirectTarget.startsWith('/') && basePath) {
+                    redirectTarget = basePath + redirectTarget;
+                }
+                
+                console.log('Attempting redirect to:', redirectTarget);
+                
+                // Check if target exists
+                fetch(redirectTarget, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            // Start countdown and redirect
+                            let countdown = 5;
+                            const countdownElement = document.getElementById('countdown');
+                            const loadingElement = document.getElementById('loading');
+                            
+                            const countdownTimer = setInterval(() => {
+                                countdown--;
+                                if (countdownElement) {
+                                    countdownElement.textContent = countdown;
+                                }
+                                
+                                if (countdown <= 0) {
+                                    clearInterval(countdownTimer);
+                                    if (loadingElement) {
+                                        loadingElement.style.display = 'block';
+                                    }
+                                    
+                                    // Perform redirect
+                                    const finalUrl = redirectTarget + search + hash;
+                                    console.log('Redirecting to:', finalUrl);
+                                    window.location.href = finalUrl;
+                                }
+                            }, 1000);
+                            
+                            return;
+                        }
+                        throw new Error('Target not found');
+                    })
+                    .catch(() => {
+                        // Fallback to home page
+                        console.log('Target not found, redirecting to home');
+                        setTimeout(() => {
+                            window.location.href = basePath + '/';
+                        }, 2000);
+                    });
+            } else {
+                // No specific redirect pattern, go to home
+                console.log('No redirect pattern matched, going to home');
+                setTimeout(() => {
+                    window.location.href = basePath + '/';
+                }, 3000);
+            }
+            
+            // Update button links with base path
+            document.querySelectorAll('a[href^="/"]').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && basePath) {
+                    link.setAttribute('href', basePath + href);
+                }
+            });
+            
+        })();
+    </script>
+</body>
+</html>

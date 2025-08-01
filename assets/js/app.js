@@ -23,11 +23,16 @@ class AppState {
     this.updateLastAccess();
   }
   
-  // Service Worker initialization
+  // Service Worker initialization with GitHub Pages support
   async initServiceWorker() {
     if ('serviceWorker' in navigator) {
       try {
-        const registration = await navigator.serviceWorker.register('/sw.js');
+        // Detect base path for GitHub Pages
+        const basePath = window.githubPagesRouter ? window.githubPagesRouter.basePath : '';
+        const swPath = basePath ? `${basePath}/sw.js` : './sw.js';
+        const scope = basePath ? `${basePath}/` : './';
+        
+        const registration = await navigator.serviceWorker.register(swPath, { scope });
         console.log('ServiceWorker registered:', registration.scope);
         
         // Handle updates
@@ -373,7 +378,7 @@ class AppState {
   }
 }
 
-// Module management functions
+// Module management functions with GitHub Pages support
 function openModule(moduleId) {
   const startTime = Date.now();
   app.currentModule = moduleId;
@@ -384,8 +389,10 @@ function openModule(moduleId) {
     lastAccessed: Date.now()
   });
   
-  // Navigate to module
-  window.location.href = `/modules/${moduleId}/index.html`;
+  // Navigate to module with proper base path
+  const basePath = window.githubPagesRouter ? window.githubPagesRouter.basePath : '';
+  const modulePath = basePath ? `${basePath}/modules/${moduleId}/index.html` : `./modules/${moduleId}/index.html`;
+  window.location.href = modulePath;
 }
 
 function showModulePreview(moduleId) {
@@ -469,13 +476,17 @@ function getModuleData(moduleId) {
   return modules[moduleId] || {};
 }
 
-// Tool functions
+// Tool functions with GitHub Pages support
 function openTool(toolId) {
-  window.location.href = `/tools/${toolId}/index.html`;
+  const basePath = window.githubPagesRouter ? window.githubPagesRouter.basePath : '';
+  const toolPath = basePath ? `${basePath}/tools/${toolId}/index.html` : `./tools/${toolId}/index.html`;
+  window.location.href = toolPath;
 }
 
 function openExamSimulator() {
-  window.location.href = '/tools/exam-simulator/index.html';
+  const basePath = window.githubPagesRouter ? window.githubPagesRouter.basePath : '';
+  const examPath = basePath ? `${basePath}/tools/exam-simulator/index.html` : './tools/exam-simulator/index.html';
+  window.location.href = examPath;
 }
 
 // Navigation functions
