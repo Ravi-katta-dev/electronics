@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Digital Logic Gates - RRB Electronics</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="digital-logic.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="../../index.html" class="back-link">← Back to Home</a>
+                    <h1>Digital Logic Gates</h1>
+                    <p class="subtitle">Module 1 - RRB Tech Grade 1</p>
+                </div>
+                <nav class="module-nav">
+                    <ul class="nav-links">
+                        <li><a href="#basics" class="nav-link active">Basics</a></li>
+                        <li><a href="#gates" class="nav-link">Logic Gates</a></li>
+                        <li><a href="#truth-tables" class="nav-link">Truth Tables</a></li>
+                        <li><a href="#boolean" class="nav-link">Boolean Algebra</a></li>
+                        <li><a href="#circuit-builder" class="nav-link">Circuit Builder</a></li>
+                        <li><a href="#practice" class="nav-link">Practice</a></li>
+                    </ul>
+                </nav>
+                <div class="module-progress-header">
+                    <span class="progress-label">Progress</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="module-progress" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Module Content -->
+        <main class="module-content">
+            <!-- Basics Section -->
+            <section id="basics" class="module-section">
+                <div class="section-header">
+                    <h2>🔢 Understanding Digital Logic</h2>
+                    <p>Master the fundamentals of digital electronics and binary logic systems</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>What is Digital Logic?</h3>
+                        <p>Digital logic forms the foundation of all modern electronic systems. Unlike analog signals that can have any value, digital signals have only two states: HIGH (1) and LOW (0).</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Digital vs Analog Signals</h4>
+                            <div class="signal-comparison">
+                                <div class="signal-display">
+                                    <h5>Digital Signal</h5>
+                                    <div class="digital-wave">
+                                        <div class="wave-line high"></div>
+                                        <div class="wave-line low"></div>
+                                        <div class="wave-line high"></div>
+                                        <div class="wave-line high"></div>
+                                        <div class="wave-line low"></div>
+                                    </div>
+                                    <p>Values: 0V (LOW) or 5V (HIGH)</p>
+                                </div>
+                                <div class="signal-display">
+                                    <h5>Analog Signal</h5>
+                                    <div class="analog-wave">
+                                        <svg width="200" height="100" viewBox="0 0 200 100">
+                                            <path d="M0,50 Q50,20 100,50 T200,50" stroke="var(--primary-color)" stroke-width="3" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <p>Continuous values: 0V to 5V</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Binary Number System</h3>
+                        <p>Digital systems use binary (base-2) numbers with only 0s and 1s.</p>
+                        
+                        <div class="interactive-demo">
+                            <h4>Binary to Decimal Converter</h4>
+                            <div class="input-controls">
+                                <label for="binary-input">Binary Input:</label>
+                                <input type="text" id="binary-input" placeholder="Enter binary number" pattern="[01]*" maxlength="8">
+                                <button onclick="convertBinary()" class="convert-btn">Convert</button>
+                            </div>
+                            <div class="output-display" id="binary-result">
+                                Enter a binary number to see the decimal equivalent
+                            </div>
+                            
+                            <div class="binary-explanation">
+                                <h5>Binary Place Values:</h5>
+                                <div class="place-values">
+                                    <div class="place-value">128</div>
+                                    <div class="place-value">64</div>
+                                    <div class="place-value">32</div>
+                                    <div class="place-value">16</div>
+                                    <div class="place-value">8</div>
+                                    <div class="place-value">4</div>
+                                    <div class="place-value">2</div>
+                                    <div class="place-value">1</div>
+                                </div>
+                                <div class="binary-digits" id="binary-digits">
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                    <div class="binary-digit">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logic Gates Section -->
+            <section id="gates" class="module-section">
+                <div class="section-header">
+                    <h2>⚡ Basic Logic Gates</h2>
+                    <p>Learn the fundamental building blocks of digital circuits</p>
+                </div>
+
+                <div class="gates-grid">
+                    <!-- AND Gate -->
+                    <div class="gate-card">
+                        <div class="gate-header">
+                            <div class="gate-symbol">
+                                <svg width="80" height="60" viewBox="0 0 80 60">
+                                    <path d="M10,10 L40,10 Q70,10 70,30 Q70,50 40,50 L10,50 Z" 
+                                          fill="none" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="0" y1="20" x2="10" y2="20" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="0" y1="40" x2="10" y2="40" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="70" y1="30" x2="80" y2="30" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <text x="5" y="15" font-size="10" fill="var(--text-primary)">A</text>
+                                    <text x="5" y="45" font-size="10" fill="var(--text-primary)">B</text>
+                                    <text x="75" y="25" font-size="10" fill="var(--text-primary)">Y</text>
+                                </svg>
+                            </div>
+                            <h3>AND Gate</h3>
+                        </div>
+                        <div class="gate-description">
+                            <p>Output is HIGH only when ALL inputs are HIGH</p>
+                            <div class="formula-box">Y = A · B</div>
+                        </div>
+                        <div class="interactive-demo">
+                            <h4>Interactive AND Gate</h4>
+                            <div class="input-controls">
+                                <label>Input A:</label>
+                                <select id="and-a" onchange="updateAndGate()">
+                                    <option value="0">0 (LOW)</option>
+                                    <option value="1">1 (HIGH)</option>
+                                </select>
+                                <label>Input B:</label>
+                                <select id="and-b" onchange="updateAndGate()">
+                                    <option value="0">0 (LOW)</option>
+                                    <option value="1">1 (HIGH)</option>
+                                </select>
+                            </div>
+                            <div class="output-display" id="and-output">Output Y = 0</div>
+                        </div>
+                    </div>
+
+                    <!-- OR Gate -->
+                    <div class="gate-card">
+                        <div class="gate-header">
+                            <div class="gate-symbol">
+                                <svg width="80" height="60" viewBox="0 0 80 60">
+                                    <path d="M10,10 Q25,10 40,30 Q25,50 10,50 Q25,30 10,10" 
+                                          fill="none" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <path d="M40,30 Q55,20 70,30 Q55,40 40,30" 
+                                          fill="none" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="0" y1="20" x2="15" y2="20" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="0" y1="40" x2="15" y2="40" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="70" y1="30" x2="80" y2="30" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <text x="5" y="15" font-size="10" fill="var(--text-primary)">A</text>
+                                    <text x="5" y="45" font-size="10" fill="var(--text-primary)">B</text>
+                                    <text x="75" y="25" font-size="10" fill="var(--text-primary)">Y</text>
+                                </svg>
+                            </div>
+                            <h3>OR Gate</h3>
+                        </div>
+                        <div class="gate-description">
+                            <p>Output is HIGH when ANY input is HIGH</p>
+                            <div class="formula-box">Y = A + B</div>
+                        </div>
+                        <div class="interactive-demo">
+                            <h4>Interactive OR Gate</h4>
+                            <div class="input-controls">
+                                <label>Input A:</label>
+                                <select id="or-a" onchange="updateOrGate()">
+                                    <option value="0">0 (LOW)</option>
+                                    <option value="1">1 (HIGH)</option>
+                                </select>
+                                <label>Input B:</label>
+                                <select id="or-b" onchange="updateOrGate()">
+                                    <option value="0">0 (LOW)</option>
+                                    <option value="1">1 (HIGH)</option>
+                                </select>
+                            </div>
+                            <div class="output-display" id="or-output">Output Y = 0</div>
+                        </div>
+                    </div>
+
+                    <!-- NOT Gate -->
+                    <div class="gate-card">
+                        <div class="gate-header">
+                            <div class="gate-symbol">
+                                <svg width="80" height="60" viewBox="0 0 80 60">
+                                    <polygon points="10,10 10,50 50,30" 
+                                             fill="none" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <circle cx="55" cy="30" r="5" 
+                                            fill="none" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="0" y1="30" x2="10" y2="30" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <line x1="60" y1="30" x2="80" y2="30" stroke="var(--text-primary)" stroke-width="2"/>
+                                    <text x="5" y="25" font-size="10" fill="var(--text-primary)">A</text>
+                                    <text x="75" y="25" font-size="10" fill="var(--text-primary)">Y</text>
+                                </svg>
+                            </div>
+                            <h3>NOT Gate (Inverter)</h3>
+                        </div>
+                        <div class="gate-description">
+                            <p>Output is the OPPOSITE of the input</p>
+                            <div class="formula-box">Y = Ā</div>
+                        </div>
+                        <div class="interactive-demo">
+                            <h4>Interactive NOT Gate</h4>
+                            <div class="input-controls">
+                                <label>Input A:</label>
+                                <select id="not-a" onchange="updateNotGate()">
+                                    <option value="0">0 (LOW)</option>
+                                    <option value="1">1 (HIGH)</option>
+                                </select>
+                            </div>
+                            <div class="output-display" id="not-output">Output Y = 1</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Truth Tables Section -->
+            <section id="truth-tables" class="module-section">
+                <div class="section-header">
+                    <h2>📊 Truth Tables</h2>
+                    <p>Understand logic gate behavior through systematic truth tables</p>
+                </div>
+
+                <div class="truth-table-container">
+                    <div class="interactive-demo">
+                        <h3>Interactive Truth Table Generator</h3>
+                        <div class="input-controls">
+                            <label>Select Gate Type:</label>
+                            <select id="gate-selector" onchange="generateTruthTable()">
+                                <option value="and">AND Gate</option>
+                                <option value="or">OR Gate</option>
+                                <option value="not">NOT Gate</option>
+                                <option value="nand">NAND Gate</option>
+                                <option value="nor">NOR Gate</option>
+                                <option value="xor">XOR Gate</option>
+                                <option value="xnor">XNOR Gate</option>
+                            </select>
+                        </div>
+                        
+                        <div class="truth-table-display" id="truth-table-display">
+                            <!-- Truth table will be generated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section id="practice" class="module-section">
+                <div class="section-header">
+                    <h2>🎯 Practice Questions</h2>
+                    <p>Test your understanding with RRB-style questions</p>
+                </div>
+
+                <div class="practice-container">
+                    <div class="question-card" id="current-question">
+                        <!-- Questions will be loaded here -->
+                    </div>
+                    
+                    <div class="practice-controls">
+                        <button class="btn-secondary" onclick="previousQuestion()">Previous</button>
+                        <span class="question-counter" id="question-counter">Question 1 of 10</span>
+                        <button class="btn-primary" onclick="nextQuestion()">Next</button>
+                    </div>
+                    
+                    <div class="practice-results" id="practice-results" style="display: none;">
+                        <h3>Practice Results</h3>
+                        <div class="results-summary">
+                            <div class="result-stat">
+                                <span class="stat-value" id="correct-answers">0</span>
+                                <span class="stat-label">Correct</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-value" id="total-questions">10</span>
+                                <span class="stat-label">Total</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-value" id="percentage-score">0%</span>
+                                <span class="stat-label">Score</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="restartPractice()">Practice Again</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Module Navigation Footer -->
+        <footer class="module-footer">
+            <div class="footer-nav">
+                <button class="nav-btn secondary" onclick="goToHome()">🏠 Home</button>
+                <button class="nav-btn secondary" onclick="previousModule()">← Previous Module</button>
+                <button class="nav-btn primary" onclick="nextModule()">Next Module →</button>
+                <button class="nav-btn secondary" onclick="openCircuitBuilder()">🔧 Circuit Builder</button>
+            </div>
+            <div class="module-progress-footer">
+                <span>Module 1 Progress: <span id="footer-progress">0%</span></span>
+                <button class="btn-success" onclick="markModuleComplete()" id="complete-btn" style="display: none;">
+                    ✓ Mark as Complete
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js"></script>
+    <script src="digital-logic.js"></script>
+</body>
+</html>
