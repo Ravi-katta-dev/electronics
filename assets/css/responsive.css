@@ -536,20 +536,35 @@
 /* Ultra-wide screens */
 @media (min-width: 1600px) {
   .app-container {
-    max-width: 1600px;
+    max-width: 1800px;
     margin: 0 auto;
   }
   
   .modules-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xxl);
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xxl);
   }
   
   .hero-content {
-    max-width: 1000px;
+    max-width: 1200px;
   }
   
   section {
-    max-width: 1600px;
+    max-width: 1800px;
+    padding: var(--spacing-xxl) var(--spacing-xxl);
+  }
+  
+  .header-content {
+    padding: var(--spacing-lg) var(--spacing-xxl);
+  }
+  
+  .footer-content {
+    padding: var(--spacing-xl) var(--spacing-xxl);
   }
 }
 
