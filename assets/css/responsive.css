@@ -1,0 +1,604 @@
+/* RRB Electronics Learning Platform - Responsive Styles */
+
+/* Mobile First Approach - Base styles are for mobile */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+  /* Header adjustments for mobile */
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+  }
+  
+  .logo-section {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .logo-section h1 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  /* Mobile navigation */
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-link {
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Hero section mobile */
+  .hero-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .hero-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-content p {
+    font-size: var(--font-size-base);
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Section adjustments */
+  section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .section-header h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-header p {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Grid adjustments for mobile */
+  .modules-grid,
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .progress-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  /* Module card mobile */
+  .module-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .module-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+  
+  .module-progress {
+    align-items: flex-start;
+    align-self: stretch;
+  }
+  
+  .progress-bar {
+    width: 100%;
+  }
+  
+  .module-stats {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .module-actions {
+    flex-direction: column;
+  }
+  
+  .module-btn {
+    width: 100%;
+  }
+  
+  /* Tool card mobile */
+  .tool-card {
+    padding: var(--spacing-lg);
+  }
+  
+  /* Progress card mobile */
+  .progress-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .progress-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .progress-circle::before {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .progress-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Interactive demo mobile */
+  .interactive-demo {
+    padding: var(--spacing-lg);
+  }
+  
+  .input-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+  }
+  
+  .input-controls label {
+    min-width: auto;
+  }
+  
+  .input-controls input,
+  .input-controls select {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  /* Footer mobile */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  /* Circuit diagram mobile */
+  .circuit-diagram {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-md);
+  }
+  
+  /* Component grid mobile */
+  .component-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .header-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .logo-section h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .hero-content h2 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .modules-grid,
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .hero-stats {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .cta-button {
+    width: auto;
+  }
+  
+  .component-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .progress-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .progress-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .modules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .hero-content {
+    max-width: 900px;
+  }
+  
+  section {
+    max-width: 1400px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .hero-content h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .hero-stats {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .progress-circle::before {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .main-header,
+  .hero-section,
+  .main-footer,
+  .nav-toggle,
+  .theme-toggle,
+  .install-app,
+  .module-actions,
+  .tool-btn,
+  .quick-access-section {
+    display: none !important;
+  }
+  
+  .app-container {
+    max-width: none;
+  }
+  
+  section {
+    padding: var(--spacing-md) 0;
+    page-break-inside: avoid;
+  }
+  
+  .module-card,
+  .tool-card,
+  .progress-card {
+    border: 2px solid black;
+    page-break-inside: avoid;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .section-header {
+    page-break-after: avoid;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+}
+
+/* Container queries for modern browsers */
+@supports (container-type: inline-size) {
+  .module-card {
+    container-type: inline-size;
+  }
+  
+  @container (max-width: 300px) {
+    .module-header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .module-progress {
+      align-items: stretch;
+    }
+    
+    .progress-bar {
+      width: 100%;
+    }
+    
+    .module-actions {
+      flex-direction: column;
+    }
+  }
+}
+
+/* Hover states for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .module-card:hover,
+  .tool-card:hover,
+  .quick-item:hover,
+  .application-box:hover {
+    transform: none;
+  }
+  
+  .module-btn:hover,
+  .tool-btn:hover,
+  .cta-button:hover {
+    transform: none;
+  }
+  
+  /* Add active states for touch */
+  .module-card:active,
+  .tool-card:active {
+    transform: scale(0.98);
+  }
+  
+  .module-btn:active,
+  .tool-btn:active,
+  .cta-button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .module-card,
+  .tool-card,
+  .quick-item,
+  .application-box,
+  .module-btn,
+  .tool-btn,
+  .cta-button {
+    transition: none !important;
+  }
+  
+  .module-card:hover,
+  .tool-card:hover,
+  .quick-item:hover,
+  .application-box:hover,
+  .module-btn:hover,
+  .tool-btn:hover,
+  .cta-button:hover {
+    transform: none !important;
+  }
+}
+
+/* Dark mode responsive adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .module-card,
+  .tool-card,
+  .progress-card,
+  .quick-item {
+    border: 3px solid;
+  }
+  
+  .progress-bar {
+    border: 2px solid;
+  }
+  
+  .module-btn,
+  .tool-btn,
+  .cta-button {
+    border: 2px solid;
+  }
+}
+
+/* Custom breakpoints for specific components */
+
+/* Extra small modules grid */
+@media (max-width: 400px) {
+  .modules-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .module-card {
+    padding: var(--spacing-md);
+  }
+  
+  .module-header h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .module-icon {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Medium-large breakpoint for optimal module layout */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+  .app-container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .modules-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .hero-content {
+    max-width: 1000px;
+  }
+  
+  section {
+    max-width: 1600px;
+  }
+}
+
+/* Foldable devices */
+@media (min-width: 280px) and (max-width: 653px) and (orientation: portrait) {
+  .hero-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .section-header {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}
+
+/* Tablet landscape specific */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero-section {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+  
+  .hero-stats {
+    gap: var(--spacing-xxl);
+  }
+  
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* iPhone specific adjustments */
+@supports (-webkit-touch-callout: none) {
+  .input-controls input,
+  .input-controls select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Safe area support for newer iPhones */
+  @supports (padding: max(0px)) {
+    .main-header {
+      padding-top: max(var(--spacing-md), env(safe-area-inset-top));
+    }
+    
+    .main-footer {
+      padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+    }
+  }
+}

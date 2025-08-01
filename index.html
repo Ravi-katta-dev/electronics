@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RRB Tech Grade 1 Signal Electronics Learning Platform - Interactive learning modules for railway signal electronics">
+    <title>RRB Electronics Learning Platform</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="assets/images/icons/logo.png" alt="RRB Electronics" class="logo">
+                    <h1>RRB Electronics Learning Platform</h1>
+                    <p class="subtitle">Tech Grade 1 Signal Preparation</p>
+                </div>
+                <nav class="main-nav">
+                    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#modules" class="nav-link">Modules</a></li>
+                        <li><a href="#tools" class="nav-link">Tools</a></li>
+                        <li><a href="#exam" class="nav-link">Exam Prep</a></li>
+                        <li><a href="#progress" class="nav-link">Progress</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                    <button class="install-app" style="display: none;">Install App</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2>Master Electronics for RRB Signal Tech</h2>
+                <p>Interactive learning modules, circuit simulations, and exam preparation tools designed specifically for RRB Tech Grade 1 Signal exam success.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Core Modules</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Practice Questions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Syllabus Coverage</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="cta-button primary" onclick="scrollToModules()">Start Learning</button>
+                    <button class="cta-button secondary" onclick="openExamSimulator()">Take Mock Test</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Overview -->
+        <section id="progress" class="progress-section">
+            <div class="section-header">
+                <h2>Your Learning Progress</h2>
+                <p>Track your preparation across all modules</p>
+            </div>
+            <div class="progress-grid">
+                <div class="progress-card overall-progress">
+                    <h3>Overall Progress</h3>
+                    <div class="circular-progress" data-progress="0">
+                        <div class="progress-circle">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <div class="detail-item">
+                            <span>Modules Completed</span>
+                            <span id="completed-modules">0/7</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Questions Attempted</span>
+                            <span id="questions-attempted">0/500+</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Study Hours</span>
+                            <span id="study-hours">0h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-card recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="recent-activity">
+                        <div class="activity-item">
+                            <span class="activity-icon">📚</span>
+                            <span class="activity-text">Welcome! Start with Digital Logic Gates</span>
+                            <span class="activity-time">Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Modules Section -->
+        <section id="modules" class="modules-section">
+            <div class="section-header">
+                <h2>Core Learning Modules</h2>
+                <p>Comprehensive coverage of RRB Tech Grade 1 Signal syllabus</p>
+            </div>
+            <div class="modules-grid">
+                <!-- Module 1: Digital Logic Gates -->
+                <div class="module-card" data-module="digital-logic">
+                    <div class="module-header">
+                        <div class="module-icon">🔢</div>
+                        <h3>Digital Logic Gates</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Master boolean algebra, truth tables, and logic gate operations with interactive simulations.</p>
+                        <ul class="module-features">
+                            <li>Interactive truth table generator</li>
+                            <li>Drag & drop circuit builder</li>
+                            <li>Boolean algebra solver</li>
+                            <li>Karnaugh map simplification</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 75 Questions</span>
+                            <span>⏱️ 6-8 Hours</span>
+                            <span>🎯 Weightage: 15%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('digital-logic')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('digital-logic')">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Module 2: Electronic Devices & Circuits -->
+                <div class="module-card" data-module="electronic-devices">
+                    <div class="module-header">
+                        <div class="module-icon">🔌</div>
+                        <h3>Electronic Devices & Circuits</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Explore semiconductors, amplifiers, and circuit analysis with virtual breadboard simulations.</p>
+                        <ul class="module-features">
+                            <li>Semiconductor device simulator</li>
+                            <li>Amplifier analysis tools</li>
+                            <li>Rectifier circuit designer</li>
+                            <li>Op-amp applications</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 85 Questions</span>
+                            <span>⏱️ 8-10 Hours</span>
+                            <span>🎯 Weightage: 20%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('electronic-devices')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('electronic-devices')">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Module 3: Microcontroller & Microprocessor -->
+                <div class="module-card" data-module="microcontroller">
+                    <div class="module-header">
+                        <div class="module-icon">🖥️</div>
+                        <h3>Microcontroller & Microprocessor</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Learn 8085/8086 instruction sets and 8051 programming with interactive simulators.</p>
+                        <ul class="module-features">
+                            <li>8085/8086 instruction simulator</li>
+                            <li>Memory mapping visualizer</li>
+                            <li>Assembly code editor</li>
+                            <li>I/O interfacing simulator</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 70 Questions</span>
+                            <span>⏱️ 7-9 Hours</span>
+                            <span>🎯 Weightage: 18%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('microcontroller')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('microcontroller')">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Module 4: Electronic Measurements -->
+                <div class="module-card" data-module="measurements">
+                    <div class="module-header">
+                        <div class="module-icon">📊</div>
+                        <h3>Electronic Measurements</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Master measurement instruments with virtual oscilloscope and multimeter simulations.</p>
+                        <ul class="module-features">
+                            <li>Virtual oscilloscope</li>
+                            <li>Digital multimeter simulator</li>
+                            <li>Function generator</li>
+                            <li>Error analysis calculator</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 65 Questions</span>
+                            <span>⏱️ 6-8 Hours</span>
+                            <span>🎯 Weightage: 16%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('measurements')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('measurements')">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Module 5: Measuring Systems -->
+                <div class="module-card" data-module="measuring-systems">
+                    <div class="module-header">
+                        <div class="module-icon">⚖️</div>
+                        <h3>Measuring Systems</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Understand measurement standards, calibration, and statistical analysis techniques.</p>
+                        <ul class="module-features">
+                            <li>Standards reference guide</li>
+                            <li>Calibration procedures</li>
+                            <li>Statistical analysis tools</li>
+                            <li>Accuracy vs precision demo</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 55 Questions</span>
+                            <span>⏱️ 5-7 Hours</span>
+                            <span>🎯 Weightage: 12%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('measuring-systems')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('measuring-systems')">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Module 6: Transducers & Sensors -->
+                <div class="module-card" data-module="transducers">
+                    <div class="module-header">
+                        <div class="module-icon">🔬</div>
+                        <h3>Transducers & Sensors</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Explore temperature, pressure sensors and signal conditioning with interactive simulators.</p>
+                        <ul class="module-features">
+                            <li>Temperature sensor simulator</li>
+                            <li>Pressure sensor calibration</li>
+                            <li>Signal conditioning designer</li>
+                            <li>Data acquisition system</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 60 Questions</span>
+                            <span>⏱️ 6-8 Hours</span>
+                            <span>🎯 Weightage: 14%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('transducers')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('transducers')">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Module 7: Display Technologies -->
+                <div class="module-card" data-module="display-tech">
+                    <div class="module-header">
+                        <div class="module-icon">📺</div>
+                        <h3>Display Technologies</h3>
+                        <div class="module-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p>Master LCD, LED displays and interfacing with practical circuit building tools.</p>
+                        <ul class="module-features">
+                            <li>LCD interfacing simulator</li>
+                            <li>Seven-segment decoder</li>
+                            <li>LED matrix controller</li>
+                            <li>Display driver circuits</li>
+                        </ul>
+                        <div class="module-stats">
+                            <span>📝 50 Questions</span>
+                            <span>⏱️ 4-6 Hours</span>
+                            <span>🎯 Weightage: 10%</span>
+                        </div>
+                    </div>
+                    <div class="module-actions">
+                        <button class="module-btn primary" onclick="openModule('display-tech')">Start Module</button>
+                        <button class="module-btn secondary" onclick="showModulePreview('display-tech')">Preview</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tools Section -->
+        <section id="tools" class="tools-section">
+            <div class="section-header">
+                <h2>Interactive Learning Tools</h2>
+                <p>Professional-grade simulation and design tools</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🔧</div>
+                    <h3>Circuit Builder</h3>
+                    <p>Drag-and-drop circuit design with real-time simulation and analysis.</p>
+                    <button class="tool-btn" onclick="openTool('circuit-builder')">Launch Tool</button>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🧪</div>
+                    <h3>Virtual Laboratory</h3>
+                    <p>Complete lab environment with oscilloscope, multimeter, and function generator.</p>
+                    <button class="tool-btn" onclick="openTool('virtual-lab')">Launch Lab</button>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">📋</div>
+                    <h3>Exam Simulator</h3>
+                    <p>CBT interface with 500+ questions, mock tests, and performance analytics.</p>
+                    <button class="tool-btn" onclick="openTool('exam-simulator')">Start Exam</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section class="quick-access-section">
+            <div class="section-header">
+                <h2>Quick Access</h2>
+                <p>Frequently used resources and shortcuts</p>
+            </div>
+            <div class="quick-access-grid">
+                <div class="quick-item" onclick="openFormulas()">
+                    <div class="quick-icon">📐</div>
+                    <span>Formulas</span>
+                </div>
+                <div class="quick-item" onclick="openBookmarks()">
+                    <div class="quick-icon">🔖</div>
+                    <span>Bookmarks</span>
+                </div>
+                <div class="quick-item" onclick="openNotes()">
+                    <div class="quick-icon">📝</div>
+                    <span>Notes</span>
+                </div>
+                <div class="quick-item" onclick="openCalculator()">
+                    <div class="quick-icon">🧮</div>
+                    <span>Calculator</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Learning Platform</h4>
+                    <ul>
+                        <li><a href="#modules">All Modules</a></li>
+                        <li><a href="#tools">Interactive Tools</a></li>
+                        <li><a href="#exam">Exam Preparation</a></li>
+                        <li><a href="docs/user-guide.html">User Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>RRB Resources</h4>
+                    <ul>
+                        <li><a href="docs/exam-strategy.html">Exam Strategy</a></li>
+                        <li><a href="#syllabus">Syllabus Coverage</a></li>
+                        <li><a href="#previous-papers">Previous Papers</a></li>
+                        <li><a href="docs/troubleshooting.html">Help & Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Study Tools</h4>
+                    <ul>
+                        <li><a href="#progress">Progress Tracking</a></li>
+                        <li><a href="#analytics">Performance Analytics</a></li>
+                        <li><a href="#study-planner">Study Planner</a></li>
+                        <li><a href="#offline-mode">Offline Mode</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RRB Electronics Learning Platform. Educational content for exam preparation.</p>
+                <p>Last updated: <span id="last-updated">Loading...</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/circuit-engine.js"></script>
+    <script src="assets/js/simulation.js"></script>
+    <script src="assets/js/exam-engine.js"></script>
+</body>
+</html>
