@@ -1,0 +1,146 @@
+[
+  {
+    "id": "basic-measurements",
+    "title": "Basic Electrical Measurements",
+    "description": "Fundamental concepts of measuring electrical quantities like voltage, current, resistance, and power in electrical circuits.",
+    "subtopics": [
+      "Voltage Measurement",
+      "Current Measurement", 
+      "Resistance Measurement",
+      "Power Measurement",
+      "Energy Measurement"
+    ]
+  },
+  {
+    "id": "measuring-instruments",
+    "title": "Measuring Instruments",
+    "description": "Classification, construction, and working principles of various electrical measuring instruments used in laboratories and industries.",
+    "subtopics": [
+      "Analog Instruments",
+      "Digital Instruments",
+      "Moving Coil Instruments",
+      "Moving Iron Instruments",
+      "Dynamometer Instruments"
+    ]
+  },
+  {
+    "id": "meter-movements",
+    "title": "Meter Movements and Mechanisms",
+    "description": "Understanding the internal mechanisms of meter movements, their sensitivity, and accuracy characteristics.",
+    "subtopics": [
+      "PMMC Movement",
+      "MI Movement", 
+      "Electrodynamometer Movement",
+      "Induction Type Movement",
+      "Digital Display Systems"
+    ]
+  },
+  {
+    "id": "errors-accuracy",
+    "title": "Errors and Accuracy",
+    "description": "Types of errors in measurements, accuracy, precision, and methods to minimize measurement errors.",
+    "subtopics": [
+      "Systematic Errors",
+      "Random Errors",
+      "Gross Errors",
+      "Accuracy vs Precision",
+      "Error Reduction Techniques"
+    ]
+  },
+  {
+    "id": "ac-measurements",
+    "title": "AC Measurements",
+    "description": "Measurement of AC quantities including RMS values, peak values, frequency, and phase relationships.",
+    "subtopics": [
+      "RMS Measurement",
+      "Peak Value Measurement",
+      "Frequency Measurement",
+      "Phase Measurement",
+      "Waveform Analysis"
+    ]
+  },
+  {
+    "id": "bridge-circuits",
+    "title": "Bridge Circuits",
+    "description": "AC and DC bridge circuits for precise measurement of resistance, inductance, capacitance, and other parameters.",
+    "subtopics": [
+      "Wheatstone Bridge",
+      "Kelvin Bridge",
+      "Maxwell Bridge",
+      "Hay Bridge",
+      "Schering Bridge"
+    ]
+  },
+  {
+    "id": "potentiometers",
+    "title": "Potentiometers",
+    "description": "DC and AC potentiometers for precise voltage measurements and calibration of other instruments.",
+    "subtopics": [
+      "DC Potentiometer",
+      "AC Potentiometer",
+      "Standardization",
+      "Calibration Process",
+      "Applications"
+    ]
+  },
+  {
+    "id": "oscilloscopes",
+    "title": "Oscilloscopes",
+    "description": "Working principle, controls, and applications of cathode ray oscilloscopes for waveform analysis.",
+    "subtopics": [
+      "CRO Construction",
+      "Time Base Circuits",
+      "Vertical Amplifier",
+      "Triggering Circuits",
+      "Measurement Techniques"
+    ]
+  },
+  {
+    "id": "digital-instruments",
+    "title": "Digital Instruments",
+    "description": "Digital voltmeters, ammeters, and multimeters with their advantages over analog instruments.",
+    "subtopics": [
+      "A/D Conversion",
+      "Digital Display",
+      "Sampling Techniques",
+      "Digital Multimeters",
+      "Data Acquisition"
+    ]
+  },
+  {
+    "id": "transducers",
+    "title": "Transducers and Sensors",
+    "description": "Devices that convert non-electrical quantities to electrical signals for measurement purposes.",
+    "subtopics": [
+      "Temperature Transducers",
+      "Pressure Transducers",
+      "Displacement Transducers",
+      "Force Transducers",
+      "Signal Conditioning"
+    ]
+  },
+  {
+    "id": "signal-generators",
+    "title": "Signal Generators",
+    "description": "Generation of standard signals for testing and calibration of measurement instruments.",
+    "subtopics": [
+      "Function Generators",
+      "Signal Generators",
+      "Frequency Synthesizers",
+      "Pulse Generators",
+      "Arbitrary Waveform Generators"
+    ]
+  },
+  {
+    "id": "spectrum-analyzers",
+    "title": "Spectrum Analyzers",
+    "description": "Frequency domain analysis of signals using spectrum analyzers and their applications.",
+    "subtopics": [
+      "Frequency Domain Analysis",
+      "FFT Analyzers",
+      "Real-time Analyzers",
+      "Network Analyzers",
+      "Signal Processing"
+    ]
+  }
+]
