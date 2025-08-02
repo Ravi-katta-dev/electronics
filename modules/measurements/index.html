@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurement - RRB Electronics</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="module-header">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a> > 
+            <a href="../index.html">Modules</a> > 
+            <span>Measurement</span>
+        </nav>
+        <h1>Measurement & Instrumentation</h1>
+        <p class="module-description">Master the fundamentals of electrical measurement techniques and instruments</p>
+    </header>
+
+    <main class="module-content">
+        <!-- Loading State -->
+        <div id="loading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading module content...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error-message" style="display: none;">
+            <h3>Failed to load content</h3>
+            <p>Please check your connection and try again.</p>
+            <button onclick="loadModuleData()" class="retry-btn">Retry</button>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-content" style="display: none;">
+            <!-- Navigation Tabs -->
+            <div class="tab-navigation">
+                <button class="tab-btn active" onclick="showTab('concepts')">Concepts</button>
+                <button class="tab-btn" onclick="showTab('exercises')">Practice</button>
+                <button class="tab-btn" onclick="showTab('progress')">Progress</button>
+            </div>
+
+            <!-- Concepts Tab -->
+            <section id="concepts-tab" class="tab-content active">
+                <div class="concepts-header">
+                    <h2>Key Concepts</h2>
+                    <div class="search-box">
+                        <input type="text" id="concept-search" placeholder="Search concepts..." 
+                               onkeyup="filterConcepts()">
+                    </div>
+                </div>
+                <div id="concepts-container" class="concepts-grid"></div>
+            </section>
+
+            <!-- Exercises Tab -->
+            <section id="exercises-tab" class="tab-content">
+                <div class="exercise-header">
+                    <h2>Practice Questions</h2>
+                    <div class="exercise-controls">
+                        <select id="difficulty-filter" onchange="filterExercises()">
+                            <option value="all">All Levels</option>
+                            <option value="basic">Basic</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                        <button onclick="startQuiz()" class="start-quiz-btn">Start Quiz</button>
+                    </div>
+                </div>
+                <div id="exercises-container" class="exercises-list"></div>
+            </section>
+
+            <!-- Progress Tab -->
+            <section id="progress-tab" class="tab-content">
+                <div class="progress-header">
+                    <h2>Your Progress</h2>
+                </div>
+                <div id="progress-container" class="progress-stats">
+                    <div class="stat-card">
+                        <h3>Concepts Studied</h3>
+                        <div class="stat-value" id="concepts-progress">0/0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Questions Attempted</h3>
+                        <div class="stat-value" id="questions-attempted">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Accuracy Rate</h3>
+                        <div class="stat-value" id="accuracy-rate">0%</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Quiz Modal -->
+        <div id="quiz-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Quiz Mode</h3>
+                    <button onclick="closeQuiz()" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="quiz-question" class="quiz-question"></div>
+                    <div id="quiz-options" class="quiz-options"></div>
+                    <div class="quiz-controls">
+                        <button id="submit-answer" onclick="submitAnswer()" class="submit-btn">Submit</button>
+                        <button id="next-question" onclick="nextQuestion()" class="next-btn" style="display: none;">Next</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="quiz-progress">
+                        <span id="quiz-current">1</span> of <span id="quiz-total">10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="module-footer">
+        <p>&copy; 2024 RRB Electronics Training. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
