@@ -1,0 +1,63 @@
+<svg id="device-circuit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .primary { fill: #4a90e2; }
+      .secondary { fill: #7b68ee; }
+      .accent { fill: #ff6b6b; }
+      .wire { stroke: #2c3e50; stroke-width: 1.5; fill: none; }
+      .component { stroke: #2c3e50; stroke-width: 1; }
+    </style>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+  
+  <!-- Circuit board traces -->
+  <path class="wire" d="M4 16 H12"/>
+  <path class="wire" d="M20 16 H28"/>
+  <path class="wire" d="M16 4 V12"/>
+  <path class="wire" d="M16 20 V28"/>
+  
+  <!-- Diode symbol (top) -->
+  <g transform="translate(16, 8)">
+    <path class="component primary" d="M-3 -2 L3 -2 L0 2 Z"/>
+    <line class="component" x1="-3" y1="2" x2="3" y2="2"/>
+  </g>
+  
+  <!-- Transistor symbol (center) -->
+  <g transform="translate(16, 16)">
+    <circle class="component secondary" r="4" fill="none"/>
+    <line class="component" x1="-4" y1="0" x2="-2" y2="0"/>
+    <line class="component" x1="-2" y1="-2" x2="-2" y2="2"/>
+    <line class="component" x1="-2" y1="-1" x2="2" y2="-3"/>
+    <line class="component" x1="-2" y1="1" x2="2" y2="3"/>
+    <!-- Arrow for NPN -->
+    <path class="component accent" d="M1 2.5 L2 3 L1.5 2 Z"/>
+  </g>
+  
+  <!-- Op-amp symbol (bottom) -->
+  <g transform="translate(16, 24)">
+    <path class="component primary" d="M-4 -2 L4 0 L-4 2 Z" fill="none"/>
+    <circle class="component" cx="-2" cy="-1" r="0.5"/>
+    <circle class="component" cx="-2" cy="1" r="0.5"/>
+    <text class="component" x="-2.5" y="-0.5" font-size="4" text-anchor="middle">+</text>
+    <text class="component" x="-2.5" y="1.5" font-size="4" text-anchor="middle">−</text>
+  </g>
+  
+  <!-- Connection points -->
+  <circle cx="12" cy="16" r="1.5" class="accent"/>
+  <circle cx="20" cy="16" r="1.5" class="accent"/>
+  <circle cx="16" cy="12" r="1.5" class="accent"/>
+  <circle cx="16" cy="20" r="1.5" class="accent"/>
+  
+  <!-- Circuit elements decorations -->
+  <g opacity="0.3">
+    <!-- Resistor zigzag -->
+    <path class="wire" d="M6 12 L7 11 L8 13 L9 11 L10 13 L11 12"/>
+    <!-- Capacitor -->
+    <g transform="translate(22, 12)">
+      <line class="component" x1="-1" y1="-2" x2="-1" y2="2"/>
+      <line class="component" x1="1" y1="-2" x2="1" y2="2"/>
+    </g>
+  </g>
+</svg>
