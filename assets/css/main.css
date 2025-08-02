@@ -15,9 +15,13 @@
   
   /* Text Colors */
   --text-primary: #2c3e50;
-  --text-secondary: #6c757d;
-  --text-muted: #adb5bd;
+  --text-secondary: #5a6c7d;
+  --text-muted: #8e9aa6;
   --text-light: #ffffff;
+  
+  /* Enhanced contrast for better readability */
+  --text-high-contrast: #1a252f;
+  --text-medium-contrast: #495461;
   
   /* Background Colors */
   --bg-primary: #ffffff;
@@ -447,6 +451,25 @@ section {
     max-width: 1600px;
     padding: var(--spacing-xxl) var(--spacing-xl);
   }
+  
+  /* Better text contrast and readability on desktop */
+  .module-card h3 {
+    color: var(--text-high-contrast);
+  }
+  
+  .module-card p {
+    color: var(--text-medium-contrast);
+  }
+  
+  /* Improved card spacing and hover effects */
+  .module-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .module-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
 }
 
 /* Grid Layouts */
@@ -456,6 +479,8 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-xl);
   margin-top: var(--spacing-xl);
+  /* Better alignment for grid items */
+  align-items: stretch;
 }
 
 /* Enhanced grid for larger screens */
@@ -463,6 +488,8 @@ section {
   .modules-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xl);
+    /* Improved minimum card width for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   }
   
   .tools-grid {
@@ -475,6 +502,11 @@ section {
   .modules-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-xxl);
+    /* Maximum 4 columns on very large screens */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .tools-grid {

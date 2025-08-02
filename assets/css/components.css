@@ -14,6 +14,13 @@
   will-change: transform;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  /* Better text handling */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Ensure minimum height for consistent layout */
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 .module-card:hover {
@@ -42,11 +49,22 @@
 
 .module-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: var(--spacing-lg);
   flex-wrap: wrap;
   gap: var(--spacing-md);
+  /* Ensure proper alignment on desktop */
+  min-height: 60px;
+}
+
+/* Enhanced module header for desktop */
+@media (min-width: 1200px) {
+  .module-header {
+    align-items: center;
+    flex-wrap: nowrap;
+    min-height: 70px;
+  }
 }
 
 .module-icon {
@@ -59,6 +77,24 @@
   color: var(--text-primary);
   margin: 0;
   flex: 1;
+  /* Better text overflow handling */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0; /* Allow flex item to shrink */
+}
+
+/* Enhanced title for desktop - allow multiline */
+@media (min-width: 1200px) {
+  .module-header h3 {
+    white-space: normal;
+    line-height: 1.3;
+    max-height: 2.6em; /* 2 lines max */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 
 .module-progress {
@@ -66,6 +102,17 @@
   flex-direction: column;
   align-items: flex-end;
   gap: var(--spacing-xs);
+  /* Ensure consistent width and prevent squashing */
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+/* Enhanced progress display for desktop */
+@media (min-width: 1200px) {
+  .module-progress {
+    min-width: 140px;
+    align-items: center;
+  }
 }
 
 .progress-bar {
@@ -74,6 +121,14 @@
   background-color: var(--bg-secondary);
   border-radius: var(--border-radius-full);
   overflow: hidden;
+}
+
+/* Enhanced progress bar for desktop */
+@media (min-width: 1200px) {
+  .progress-bar {
+    width: 120px;
+    height: 10px;
+  }
 }
 
 .progress-fill {
@@ -87,18 +142,51 @@
   font-size: var(--font-size-xs);
   color: var(--text-muted);
   font-weight: 500;
+  /* Prevent text wrapping */
+  white-space: nowrap;
+}
+
+/* Enhanced progress text for desktop */
+@media (min-width: 1200px) {
+  .progress-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+}
+
+.module-content {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
 }
 
 .module-content p {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
   line-height: 1.6;
+  /* Improved text readability and overflow handling */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
+}
+
+/* Enhanced content for desktop */
+@media (min-width: 1200px) {
+  .module-content p {
+    -webkit-line-clamp: 2;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
 }
 
 .module-features {
   list-style: none;
   padding: 0;
   margin-bottom: var(--spacing-lg);
+  flex: 1; /* Take up available space */
 }
 
 .module-features li {
@@ -106,6 +194,19 @@
   color: var(--text-secondary);
   position: relative;
   padding-left: var(--spacing-lg);
+  /* Better text handling */
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Enhanced features for desktop */
+@media (min-width: 1200px) {
+  .module-features li {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) 0;
+    white-space: nowrap;
+  }
 }
 
 .module-features li::before {
@@ -121,6 +222,8 @@
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
   flex-wrap: wrap;
+  /* Ensure stats don't grow too much */
+  flex-shrink: 0;
 }
 
 .module-stats span {
@@ -130,12 +233,33 @@
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--border-radius-md);
   font-weight: 500;
+  /* Better contrast and readability */
+  border: 1px solid #dee2e6;
+  white-space: nowrap;
+}
+
+/* Enhanced stats for desktop */
+@media (min-width: 1200px) {
+  .module-stats {
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .module-stats span {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid #c6cbd0;
+  }
 }
 
 .module-actions {
   display: flex;
   gap: var(--spacing-md);
   flex-wrap: wrap;
+  /* Keep actions at the bottom */
+  margin-top: auto;
 }
 
 .module-btn {
@@ -148,6 +272,24 @@
   font-size: var(--font-size-sm);
   flex: 1;
   min-width: 120px;
+  /* Better button sizing and alignment */
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Enhanced buttons for desktop */
+@media (min-width: 1200px) {
+  .module-actions {
+    gap: var(--spacing-lg);
+    flex-wrap: nowrap;
+  }
+  
+  .module-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    min-width: 140px;
+    border-radius: var(--border-radius-lg);
+  }
 }
 
 .module-btn.primary {

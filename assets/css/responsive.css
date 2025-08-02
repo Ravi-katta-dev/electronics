@@ -300,11 +300,43 @@
   .footer-content {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  /* Improved module card layout for medium desktop */
+  .module-card {
+    min-height: 420px;
+    padding: var(--spacing-xl);
+  }
+  
+  .module-header h3 {
+    font-size: var(--font-size-xl);
+    line-height: 1.3;
+  }
+  
+  .module-content p {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+  
+  /* Better navigation spacing */
+  .header-content {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
 }
 
 @media (min-width: 1200px) {
   .modules-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    /* Improved minimum card width for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   }
   
   .hero-content {
@@ -313,6 +345,16 @@
   
   section {
     max-width: 1400px;
+  }
+  
+  /* Better module card alignment and sizing */
+  .module-card {
+    min-height: 450px;
+  }
+  
+  .module-header {
+    min-height: 80px;
+    align-items: flex-start;
   }
 }
 
